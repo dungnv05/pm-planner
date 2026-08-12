@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-12T03:42:07.000Z",
+  "syncedAt": "2026-08-12T06:17:14.000Z",
   "team": {
     "id": "f2d94035-748c-4cdb-a422-4c64a94b52a4",
     "key": "ENPRVN",
@@ -169,10 +169,10 @@
       "id": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
       "name": "DM  Segment-based Design (DM- SBD)",
       "url": "https://linear.app/raksul/project/dm-segment-based-design-dm-sbd-955f62b3e73d",
-      "status": "Completed",
-      "statusType": "completed",
+      "status": "In Progress",
+      "statusType": "started",
       "startDate": "2026-06-01",
-      "targetDate": "2026-08-18",
+      "targetDate": "2026-08-25",
       "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
       "memberIds": [
         "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
@@ -291,7 +291,7 @@
     },
     {
       "id": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
-      "name": "BE-Driven Rendering \u2014 Category Detail page",
+      "name": "BE-Driven Rendering — Category Detail page",
       "url": "https://linear.app/raksul/project/be-driven-rendering-category-detail-page-8b2acb9aad5a",
       "status": "Completed",
       "statusType": "completed",
@@ -790,7 +790,7 @@
       "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
       "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
       "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
-      "issueCount": 18
+      "issueCount": 17
     },
     {
       "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",

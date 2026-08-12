@@ -76,3 +76,34 @@ export function formatCompare(plan: number, actual: number): string {
   const a = actual > 0.001 ? formatPct(actual) : '—'
   return `Plan: ${p} · Actual: ${a}`
 }
+
+export type ActualVsPlanTone = 'unplanned' | 'match' | 'mismatch'
+
+/** Compare actual bar to plan: unplanned (red), match (green), mismatch (yellow). */
+export function actualVsPlanTone(plan: number, actual: number): ActualVsPlanTone {
+  if (plan <= 0.01) return 'unplanned'
+  if (Math.abs(plan - actual) <= 0.05) return 'match'
+  return 'mismatch'
+}
+
+export function actualVsPlanColor(tone: ActualVsPlanTone): string {
+  switch (tone) {
+    case 'unplanned':
+      return 'var(--cap-over-2)'
+    case 'match':
+      return 'var(--cap-full)'
+    case 'mismatch':
+      return 'var(--cap-under)'
+  }
+}
+
+export function actualVsPlanLabel(tone: ActualVsPlanTone): string {
+  switch (tone) {
+    case 'unplanned':
+      return 'unplanned'
+    case 'match':
+      return 'match'
+    case 'mismatch':
+      return 'mismatch'
+  }
+}

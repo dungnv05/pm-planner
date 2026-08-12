@@ -16,6 +16,7 @@ interface Props {
   assignments: Assignment[]
   cycles: Cycle[]
   actualWork: ActualWork[]
+  selectedMemberIds: string[]
   onDropMember: (projectId: string, weekMonday: string, memberId: string) => void
   onMoveAssignment: (id: string, startWeek: string, endWeek: string) => void
   onEditAssignment: (assignment: Assignment) => void
@@ -32,6 +33,7 @@ export function TimelineBoard({
   assignments,
   cycles,
   actualWork,
+  selectedMemberIds,
   onDropMember,
   onMoveAssignment,
   onEditAssignment,
@@ -139,6 +141,7 @@ export function TimelineBoard({
               assignments={assignments}
               cycles={cycles}
               actualWork={actualWork}
+              selectedMemberIds={selectedMemberIds}
               onDropMember={onDropMember}
               onMoveAssignment={onMoveAssignment}
               onEditAssignment={onEditAssignment}

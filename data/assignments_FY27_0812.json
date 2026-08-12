@@ -1,0 +1,302 @@
+{
+  "updatedAt": "2026-08-12T09:35:36.500Z",
+  "windowStart": "2026-05-01",
+  "assignments": [
+    {
+      "id": "0e05d562-c750-470a-8264-3c9659e4896e",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "06be2511-2744-4eee-8788-065feb8c798b",
+      "startWeek": "2026-08-31",
+      "endWeek": "2026-12-28",
+      "allocation": 0.5
+    },
+    {
+      "id": "eaa0fb04-d40c-4ad2-8006-8b6a21132ab9",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "06be2511-2744-4eee-8788-065feb8c798b",
+      "startWeek": "2026-08-31",
+      "endWeek": "2026-12-28",
+      "allocation": 1
+    },
+    {
+      "id": "367af1e3-3b5f-434c-8a3c-91a22750c891",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-05-25",
+      "endWeek": "2026-06-01",
+      "allocation": 0.5
+    },
+    {
+      "id": "3f912faf-5b88-4a09-9ffe-050e34194c72",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "startWeek": "2026-05-25",
+      "endWeek": "2026-06-22",
+      "allocation": 0.5
+    },
+    {
+      "id": "ba6fa0b6-8a7d-45fa-8f35-7f484a9e0d99",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-06-15",
+      "endWeek": "2026-08-17",
+      "allocation": 0.25
+    },
+    {
+      "id": "54395dc2-ac3e-483f-8edd-ee22d66fd74e",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-06-15",
+      "endWeek": "2026-08-17",
+      "allocation": 0.75
+    },
+    {
+      "id": "5c6e2949-6e0f-45df-9bf2-20e3e86c69da",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-06-01",
+      "allocation": 1
+    },
+    {
+      "id": "f7d7ee33-918c-4a77-96cc-fbe70e43ce01",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "startWeek": "2026-06-29",
+      "endWeek": "2026-08-24",
+      "allocation": 1
+    },
+    {
+      "id": "066d87c8-7b5a-4871-b88d-5808684e1b9a",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "06be2511-2744-4eee-8788-065feb8c798b",
+      "startWeek": "2026-07-06",
+      "endWeek": "2026-12-28",
+      "allocation": 1
+    },
+    {
+      "id": "27e7befc-ad0a-418c-98e5-2d8a6885025c",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-06-01",
+      "endWeek": "2026-08-03",
+      "allocation": 1
+    },
+    {
+      "id": "e14f229d-d1ff-4dac-a371-49a6fe5f8696",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "ea74e82d-073e-434e-9ab3-02f60e96f499",
+      "startWeek": "2026-05-18",
+      "endWeek": "2026-06-01",
+      "allocation": 0.5
+    },
+    {
+      "id": "329c433a-8c09-4190-9085-370af15cee4c",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 0.5
+    },
+    {
+      "id": "9f4813e3-45cc-4a5f-9655-92a5c40de538",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "06be2511-2744-4eee-8788-065feb8c798b",
+      "startWeek": "2026-07-06",
+      "endWeek": "2026-12-28",
+      "allocation": 0.5
+    },
+    {
+      "id": "baf8640c-44c5-495d-a4ed-ce80669631e7",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 1
+    },
+    {
+      "id": "1ce49170-8ca3-4105-a51e-af9f30461b32",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-05-18",
+      "endWeek": "2026-08-10",
+      "allocation": 1
+    },
+    {
+      "id": "8a1356f8-1c8d-4e85-ae55-de53a16fa862",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "startWeek": "2026-06-29",
+      "endWeek": "2026-08-24",
+      "allocation": 1
+    },
+    {
+      "id": "6fb3ebc0-eeda-4e4f-aef2-c502d9c05bbf",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 1
+    },
+    {
+      "id": "f15d94d9-7820-4f0f-848a-c9c9f97b4c83",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-06-01",
+      "endWeek": "2026-12-28",
+      "allocation": 0.5
+    },
+    {
+      "id": "9ad1b439-504f-4389-838e-c91cbbdacf25",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-06-01",
+      "endWeek": "2026-08-17",
+      "allocation": 0.5
+    },
+    {
+      "id": "d786d86e-83f5-4e26-a956-3978019bc2fa",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "13077758-3241-4bef-9247-9589e65a1842",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-07-06",
+      "allocation": 1
+    },
+    {
+      "id": "dd198829-60a2-4f7d-85e3-af52bd5b3e59",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-07-13",
+      "endWeek": "2026-07-20",
+      "allocation": 1
+    },
+    {
+      "id": "0121690c-ed5f-42f6-897e-d42063a23d6d",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "06be2511-2744-4eee-8788-065feb8c798b",
+      "startWeek": "2026-08-10",
+      "endWeek": "2026-12-28",
+      "allocation": 1
+    },
+    {
+      "id": "e019c55b-a9f7-4f0b-8a46-1be80c2690f4",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "startWeek": "2026-05-18",
+      "endWeek": "2026-08-10",
+      "allocation": 1
+    },
+    {
+      "id": "9daea7d8-e97a-494e-aad9-76a5905b0b88",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "startWeek": "2026-06-15",
+      "endWeek": "2026-06-22",
+      "allocation": 0.5
+    },
+    {
+      "id": "eca6abf2-46e7-40b5-b148-27401c7ac1ad",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "startWeek": "2026-06-15",
+      "endWeek": "2026-08-24",
+      "allocation": 1
+    },
+    {
+      "id": "1e20cf2c-e381-43df-a56c-77228a1e336c",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 1
+    },
+    {
+      "id": "2393a746-d7e4-4bef-baed-b8bc9ca01d33",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 0.3333333333333333
+    },
+    {
+      "id": "a884e45f-8aed-4cff-adca-8592be4c2d32",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dd4b4e7c-0066-4929-9439-ecf228482dd2",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-05-18",
+      "allocation": 0.3333333333333333
+    },
+    {
+      "id": "1822e603-3ef9-492e-8a03-a7cf5d27976a",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "startWeek": "2026-05-25",
+      "endWeek": "2026-06-08",
+      "allocation": 1
+    },
+    {
+      "id": "65119d72-c673-48b2-9217-82caf3933428",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "startWeek": "2026-05-18",
+      "endWeek": "2026-06-22",
+      "allocation": 1
+    },
+    {
+      "id": "8637ca6a-7c85-4917-9aa0-c2fb887c352a",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-06-29",
+      "endWeek": "2026-08-10",
+      "allocation": 1
+    },
+    {
+      "id": "98b2f34d-b4ca-43a9-9f25-5e4413c24996",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-06-22",
+      "allocation": 0.5
+    },
+    {
+      "id": "9d1084c3-a11e-4162-ba4c-a88bfff92803",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "e3d9a07e-cbd4-40b6-bb2c-a7193b3e384a",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-06-22",
+      "allocation": 0.5
+    },
+    {
+      "id": "e83539a7-b674-419a-bda6-6b0550a06f92",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-12-28",
+      "allocation": 0.5
+    },
+    {
+      "id": "e289262e-7d43-4b38-920c-a1e14329b5df",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-05-18",
+      "endWeek": "2026-12-28",
+      "allocation": 0.5
+    },
+    {
+      "id": "a09b25f7-ecf1-4922-bee8-227153855245",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "startWeek": "2026-05-04",
+      "endWeek": "2026-06-22",
+      "allocation": 0.5
+    },
+    {
+      "id": "fe89bc85-9f46-4a70-ae9f-2e4f1909efaf",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "startWeek": "2026-06-29",
+      "endWeek": "2026-08-24",
+      "allocation": 1
+    }
+  ]
+}

@@ -159,6 +159,18 @@ select {
   color: var(--ink-muted);
 }
 
+.filter-hint {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+}
+
+.clear-filter {
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+}
+
 .member-card {
   display: flex;
   align-items: center;
@@ -171,8 +183,21 @@ select {
   background: var(--bg);
 }
 
+.member-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.member-card.dimmed {
+  opacity: 0.45;
+}
+
 .member-card:hover {
   border-color: var(--line);
+}
+
+.member-card.selected:hover {
+  border-color: var(--accent);
 }
 
 .member-card:active {
@@ -471,6 +496,33 @@ select {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  flex: 1;
+}
+
+.assignment-bar .bar-remove {
+  flex-shrink: 0;
+  border: none;
+  background: rgb(0 0 0 / 25%);
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.assignment-bar:hover .bar-remove,
+.assignment-bar:focus-within .bar-remove {
+  display: inline-flex;
+}
+
+.assignment-bar .bar-remove:hover {
+  background: rgb(0 0 0 / 45%);
 }
 
 .assignment-bar .resize {
@@ -492,15 +544,8 @@ select {
 .actual-bar {
   position: absolute;
   border-radius: 3px;
-  border: 1.5px dashed var(--actual-hatch);
-  background: repeating-linear-gradient(
-    -45deg,
-    color-mix(in srgb, var(--actual-hatch) 28%, #fff),
-    color-mix(in srgb, var(--actual-hatch) 28%, #fff) 4px,
-    color-mix(in srgb, var(--actual-hatch) 12%, #fff) 4px,
-    color-mix(in srgb, var(--actual-hatch) 12%, #fff) 8px
-  );
-  color: var(--ink);
+  border: 1.5px dashed;
+  color: #fff;
   font-size: 0.6rem;
   display: flex;
   align-items: center;
@@ -509,6 +554,24 @@ select {
   white-space: nowrap;
   z-index: 1;
   pointer-events: auto;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgb(255 255 255 / 18%),
+    rgb(255 255 255 / 18%) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+.actual-bar.tone-mismatch {
+  color: var(--ink);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgb(0 0 0 / 8%),
+    rgb(0 0 0 / 8%) 3px,
+    transparent 3px,
+    transparent 6px
+  );
 }
 
 .legend {
@@ -573,7 +636,7 @@ select {
 
 .alloc-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   margin-bottom: 12px;
 }

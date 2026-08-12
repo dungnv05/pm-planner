@@ -126,6 +126,19 @@ export function AssignmentBar({
       <span className="bar-label">
         {label} · {formatPct(assignment.allocation)}
       </span>
+      <button
+        type="button"
+        className="bar-remove"
+        title="Remove plan"
+        aria-label="Remove plan"
+        onPointerDown={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation()
+          onRemove(assignment.id)
+        }}
+      >
+        ×
+      </button>
       <span className="resize right" onPointerDown={(e) => onResize('right', e)} />
     </div>
   )

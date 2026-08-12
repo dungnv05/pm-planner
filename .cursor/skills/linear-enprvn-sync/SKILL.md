@@ -1,13 +1,13 @@
 ---
 name: linear-enprvn-sync
 description: >-
-  Weekly sync of ENPRVN Linear team data into data/linear-snapshot.json for the
-  PM resource planner. Use when the user asks to sync Linear, refresh the
-  ENPRVN snapshot, update actualWork from completed cycles, or run the weekly
-  Linear data pull.
+  Sync ENPRVN Linear data into data/linear-snapshot.json for the PM resource
+  planner. Default mode is recent (2 newest completed cycles for actualWork).
+  Use when the user asks to sync Linear, refresh snapshot, or run weekly pull.
+  Run full mode only when the user explicitly asks for full sync / backfill.
 ---
 
-# Linear ENPRVN weekly sync
+# Linear ENPRVN sync
 
 Overwrite `data/linear-snapshot.json` only. Never modify `data/assignments.json`.
 
@@ -21,7 +21,16 @@ name: [RIU] Enterprise VN
 
 Use Linear MCP server `plugin-linear-linear`.
 
-## Workflow
+## Modes
+
+| Mode | When | actualWork |
+|------|------|------------|
+| **recent** (default) | User says sync / refresh / weekly update without “full” | Fetch issues for the **2 most recently completed** cycles only; **merge** into existing `actualWork` |
+| **full** | User explicitly says **full sync**, **backfill**, or **sync all cycles** | Rebuild `actualWork` from **all** completed cycles |
+
+If unclear, use **recent**.
+
+## Shared steps (both modes)
 
 1. **Members** — `list_users` with `team="[RIU] Enterprise VN"` (limit 250). Map to:
    `{ id, name, displayName, email, avatarUrl?, active }` (`active` ← `isActive`).
@@ -45,30 +54,59 @@ Use Linear MCP server `plugin-linear-linear`.
 3. **Cycles** — `list_cycles` with `teamId="f2d94035-748c-4cdb-a422-4c64a94b52a4"`.
    For each cycle set `isCompleted = endsAt < now AND NOT isCurrent`.
 
-4. **actualWork** — For each completed cycle only:
-   - `list_issues` with `team="[RIU] Enterprise VN"`, `cycle=<cycle number>`, `limit=250`,
-     `fields=["id","assigneeId","projectId","cycleId"]`.
-   - Paginate while `hasNextPage`.
-   - Skip issues missing `assigneeId` or `projectId`.
-   - Aggregate unique `(cycleId, memberId=assigneeId, projectId)` with `issueCount`.
+## actualWork
 
-5. **Write** — Overwrite `data/linear-snapshot.json`:
-   ```
-   {
-     syncedAt: <ISO now>,
-     team: { id, key, name },
-     members, projects, cycles, actualWork
-   }
-   ```
+### Issue fetch (for selected cycles)
 
-6. **Do not touch** `data/assignments.json`.
+For each selected cycle:
 
-7. **Report** a diff summary vs the previous snapshot:
-   - counts: members, projects, cycles, completed cycles, actualWork rows
-   - notable adds/removes (members, projects) when obvious
-   - confirm `assignments.json` was left unchanged
+- `list_issues` with `team="[RIU] Enterprise VN"`, `cycle=<cycle number>`, `limit=250`,
+  `fields=["id","assigneeId","projectId","cycleId"]`.
+- Paginate while `hasNextPage`.
+- Skip issues missing `assigneeId` or `projectId`.
+- Aggregate unique `(cycleId, memberId=assigneeId, projectId)` with `issueCount`.
+
+### recent (default)
+
+1. Sort completed cycles by `endsAt` descending; take the **top 2**.
+2. Fetch + aggregate actualWork for those 2 cycles only.
+3. Load previous `data/linear-snapshot.json` if present.
+4. Build new `actualWork` =
+   - keep previous rows whose `cycleId` is **not** in the 2 refreshed cycles
+   - plus new rows for the 2 refreshed cycles
+5. If no previous file, `actualWork` = only the 2 cycles (note in report that older cycles need a **full sync** once).
+
+### full
+
+1. Select **all** completed cycles.
+2. Fetch + aggregate for each; `actualWork` = full rebuild (no merge).
+
+## Write
+
+Overwrite `data/linear-snapshot.json`:
+
+```
+{
+  syncedAt: <ISO now>,
+  syncMode: "recent" | "full",
+  team: { id, key, name },
+  members, projects, cycles, actualWork
+}
+```
+
+## Do not touch
+
+`data/assignments.json`.
+
+## Report
+
+- Mode used (`recent` / `full`)
+- Counts: members, projects, cycles, completed cycles, actualWork rows
+- For **recent**: which 2 cycle numbers were refreshed
+- Notable status changes (e.g. project Completed → In Progress)
+- Confirm `assignments.json` unchanged
 
 ## Notes
 
-- `windowStart` in assignments stays at the Monday on/before the 6-month planning window (e.g. `2026-03-02`); sync does not change it.
-- Prefer team name `"[RIU] Enterprise VN"` for filters; use team id for `list_cycles`.
+- Prefer team name `"[RIU] Enterprise VN"` for filters; team id for `list_cycles`.
+- Weekly habit: **recent**. Run **full** after onboarding, data loss, or when older-cycle actual bars look wrong/missing.

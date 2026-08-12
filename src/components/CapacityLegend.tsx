@@ -26,8 +26,16 @@ export function CapacityLegend() {
         Plan assignment
       </div>
       <div className="legend-item">
-        <span className="swatch actual" />
-        Actual (completed cycle)
+        <span className="swatch" style={{ background: 'var(--cap-over-2)' }} />
+        Actual: unplanned
+      </div>
+      <div className="legend-item">
+        <span className="swatch" style={{ background: 'var(--cap-full)' }} />
+        Actual: matches plan
+      </div>
+      <div className="legend-item">
+        <span className="swatch" style={{ background: 'var(--cap-under)' }} />
+        Actual: differs from plan
       </div>
     </footer>
   )

@@ -1,7 +1,12 @@
 import type { ActualWork, Assignment, Cycle, Member } from '../types'
 import { actualAllocationFor } from '../lib/actualWorkload'
 import { formatPct, memberPlanInCycle } from '../lib/capacity'
-import { formatCompare } from '../lib/comparePlanActual'
+import {
+  actualVsPlanColor,
+  actualVsPlanLabel,
+  actualVsPlanTone,
+  formatCompare,
+} from '../lib/comparePlanActual'
 import {
   ACTUAL_BAR_H,
   PLAN_BAR_H,
@@ -66,13 +71,22 @@ export function ActualWorkloadLayer({
           cycle.endsAt,
           assignments,
         )
+        const tone = actualVsPlanTone(plan, alloc)
+        const color = actualVsPlanColor(tone)
 
         return (
           <div
             key={`${cycle.id}-${memberId}`}
-            className="actual-bar"
-            style={{ left, width, top, height: ACTUAL_BAR_H }}
-            title={`${name} · Cycle ${cycle.number} · ${formatCompare(plan, alloc)} · ${issueCount} issues`}
+            className={`actual-bar tone-${tone}`}
+            style={{
+              left,
+              width,
+              top,
+              height: ACTUAL_BAR_H,
+              backgroundColor: color,
+              borderColor: color,
+            }}
+            title={`${name} · Cycle ${cycle.number} · ${formatCompare(plan, alloc)} · ${actualVsPlanLabel(tone)} · ${issueCount} issues`}
           >
             <span className="bar-label">
               C{cycle.number} · {formatPct(alloc)}

@@ -4,9 +4,14 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 9397",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --port 9397",
+    "service:start": "bash scripts/service.sh start",
+    "service:stop": "bash scripts/service.sh stop",
+    "service:restart": "bash scripts/service.sh restart",
+    "service:status": "bash scripts/service.sh status",
+    "service:logs": "bash scripts/service.sh logs"
   },
   "dependencies": {
     "react": "^19.1.0",

@@ -46,6 +46,7 @@ export default function App() {
   )
   const [showAllProjects, setShowAllProjects] = useState(false)
   const [scale, setScale] = useState<TimelineScale>('week')
+  const [selectedMemberIds, setSelectedMemberIds] = useState<string[]>([])
   const [pendingDrop, setPendingDrop] = useState<{
     memberId: string
     projectId: string
@@ -191,6 +192,13 @@ export default function App() {
           members={members}
           focusMonth={focusMonth}
           capacityByMember={capacityFocus}
+          selectedMemberIds={selectedMemberIds}
+          onToggleMember={(id) => {
+            setSelectedMemberIds((prev) =>
+              prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+            )
+          }}
+          onClearFilter={() => setSelectedMemberIds([])}
           onDragStart={() => undefined}
         />
         <TimelineBoard
@@ -202,6 +210,7 @@ export default function App() {
           assignments={assignmentsFile.assignments}
           cycles={snapshot.cycles ?? []}
           actualWork={snapshot.actualWork ?? []}
+          selectedMemberIds={selectedMemberIds}
           onDropMember={(projectId, week, memberId) => {
             setPendingDrop({ memberId, projectId, week, initial: 1 })
           }}

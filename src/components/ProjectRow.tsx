@@ -18,6 +18,7 @@ interface Props {
   assignments: Assignment[]
   cycles: Cycle[]
   actualWork: ActualWork[]
+  selectedMemberIds: string[]
   onDropMember: (projectId: string, weekMonday: string, memberId: string) => void
   onMoveAssignment: (id: string, startWeek: string, endWeek: string) => void
   onEditAssignment: (assignment: Assignment) => void
@@ -33,6 +34,7 @@ export function ProjectRow({
   assignments,
   cycles,
   actualWork,
+  selectedMemberIds,
   onDropMember,
   onMoveAssignment,
   onEditAssignment,
@@ -45,13 +47,22 @@ export function ProjectRow({
     const m = members.find((x) => x.id === id)
     return m?.displayName || m?.name || id
   }
-  const lanes = memberLanesForProject(
+  const allLanes = memberLanesForProject(
     project.id,
     assignments,
     actualWork,
     completedIds,
     nameOf,
   )
+  const lanes =
+    selectedMemberIds.length > 0
+      ? allLanes.filter((id) => selectedMemberIds.includes(id))
+      : allLanes
+
+  if (selectedMemberIds.length > 0 && lanes.length === 0) {
+    return null
+  }
+
   const projectAssignments = assignments.filter((a) => a.projectId === project.id)
   const dropLanes = lanes.length > 0 ? lanes : ['__empty__']
 

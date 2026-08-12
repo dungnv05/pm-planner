@@ -13,18 +13,29 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 
 ## Run
 
-```bash
-npm install
-npm run dev
-```
+- **Foreground (Development)**:
+  ```bash
+  npm run dev
+  ```
+  App starts on fixed port **http://localhost:9397**.
 
-Open the URL Vite prints (usually http://localhost:5173).
+- **Background Service**:
+  ```bash
+  npm run service:start     # Start server in background
+  npm run service:status    # Check status & PID
+  npm run service:stop      # Stop background server
+  npm run service:restart   # Restart server
+  npm run service:logs      # View output and error logs
+  ```
 
 ## Weekly Linear sync
 
-In Cursor, ask the agent to run the **linear-enprvn-sync** skill (project skill under `.cursor/skills/linear-enprvn-sync/`).
+In Cursor, ask the agent to run the **linear-enprvn-sync** skill (`.cursor/skills/linear-enprvn-sync/`).
 
-It refreshes `data/linear-snapshot.json` only — it never overwrites `data/assignments.json`.
+- **Default (`recent`)**: refresh members/projects/cycles + `actualWork` for the **2 newest completed cycles** only (cheaper).
+- **Full**: say “full sync” / “sync all cycles” when you need to rebuild actualWork for every completed cycle.
+
+It updates `data/linear-snapshot.json` only — never overwrites `data/assignments.json`.
 
 After sync, restart or refresh the app to load the new snapshot.
 

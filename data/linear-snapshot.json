@@ -1,0 +1,1318 @@
+{
+  "syncedAt": "2026-08-12T03:42:07.000Z",
+  "team": {
+    "id": "f2d94035-748c-4cdb-a422-4c64a94b52a4",
+    "key": "ENPRVN",
+    "name": "[RIU] Enterprise VN"
+  },
+  "members": [
+    {
+      "id": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "name": "hoan.nd@raksul.com",
+      "displayName": "hoan.nd",
+      "email": "hoan.nd@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/fa80c25b-7a30-44a1-9a05-00d7ba922567/b7e6e0d7-46d1-4c81-b677-b23be70fc76e"
+    },
+    {
+      "id": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "name": "v.nguyen@raksul.com",
+      "displayName": "v.nguyen",
+      "email": "v.nguyen@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/51d2a02e-5038-47dd-9ec6-8febec3e9c47/d1028e72-28ba-4a8d-b437-74a440d2d3fb"
+    },
+    {
+      "id": "de6d8aaf-f134-4984-9cea-f75616bff5ee",
+      "name": "Yoshihito Niizuma",
+      "displayName": "y.niizuma",
+      "email": "y.niizuma@raksul.com",
+      "active": true
+    },
+    {
+      "id": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "name": "Chinh Vo",
+      "displayName": "chinh.vt",
+      "email": "chinh.vt@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/3f2d9fb6-4b17-4695-8c74-372348bd6bce/f8aea041-25f9-44b9-ba16-ea0ab0791918"
+    },
+    {
+      "id": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "name": "minh.dpc@raksul.com",
+      "displayName": "minh.dpc",
+      "email": "minh.dpc@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/5f0603ce-2ad4-496d-8dac-a07325c7a528/6a8d5708-d0f4-4297-832e-363cff86e36d"
+    },
+    {
+      "id": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "name": "tuan.vt@raksul.com",
+      "displayName": "tuan.vt",
+      "email": "tuan.vt@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/2ea736c0-4a74-40dc-be46-68c2f63f6652/e07c1159-eabc-48f3-bd5f-255d61603356"
+    },
+    {
+      "id": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "name": "anh.mht@raksul.com",
+      "displayName": "anh.mht",
+      "email": "anh.mht@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/eca74413-c537-4e4d-b310-f7dccac4dfc0/923de630-9559-4677-a080-36fa10d6a0b2"
+    },
+    {
+      "id": "13441b59-358f-4097-b9db-13ab1134dad2",
+      "name": "Khanh Duy",
+      "displayName": "khanh.nd",
+      "email": "khanh.nd@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13441b59-358f-4097-b9db-13ab1134dad2/5d3cfcea-1384-4a59-a1b8-638ac5fd2ba4"
+    },
+    {
+      "id": "3e710cc2-8777-402e-8aa1-d65c82ecf7d1",
+      "name": "n.inoue@raksul.com",
+      "displayName": "n.inoue",
+      "email": "n.inoue@raksul.com",
+      "active": true
+    },
+    {
+      "id": "2666acd3-4436-4966-948f-06985784aa15",
+      "name": "minh.da@raksul.com",
+      "displayName": "minh.da",
+      "email": "minh.da@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/a814bab1-db8d-492e-ae99-306a2ab4e00e/300a79d2-d21b-4020-aea9-5d3638950945"
+    },
+    {
+      "id": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "name": "danh.lt@raksul.com",
+      "displayName": "danh.lt",
+      "email": "danh.lt@raksul.com",
+      "active": true,
+      "avatarUrl": "https://public.linear.app/13856451-2c55-4398-90ae-563154d8eb33/7e076abd-752a-4fb9-9fa7-3c3334296a6a/8d1afe5b-7aff-41c8-a51c-875e5ffe2316"
+    },
+    {
+      "id": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "name": "hoai.tl@raksul.com",
+      "displayName": "hoai.tl",
+      "email": "hoai.tl@raksul.com",
+      "active": true
+    },
+    {
+      "id": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "name": "ly.hkk@raksul.com",
+      "displayName": "ly.hkk",
+      "email": "ly.hkk@raksul.com",
+      "active": true
+    },
+    {
+      "id": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "name": "thu.ndt@raksul.com",
+      "displayName": "thu.ndt",
+      "email": "thu.ndt@raksul.com",
+      "active": true
+    },
+    {
+      "id": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "name": "quoc.ln@raksul.com",
+      "displayName": "quoc.ln",
+      "email": "quoc.ln@raksul.com",
+      "active": true
+    },
+    {
+      "id": "9055cf48-fc0b-4794-8eb8-8859e9945128",
+      "name": "s.nonaka@raksul.com",
+      "displayName": "s.nonaka",
+      "email": "s.nonaka@raksul.com",
+      "active": true
+    },
+    {
+      "id": "3b8051df-a606-4e59-a836-a8e79bea8b6e",
+      "name": "k.kuno@raksul.com",
+      "displayName": "k.kuno",
+      "email": "k.kuno@raksul.com",
+      "active": true
+    },
+    {
+      "id": "94dee770-a241-4583-bc37-4479d2778c83",
+      "name": "dung.bm@raksul.com",
+      "displayName": "dung.bm",
+      "email": "dung.bm@raksul.com",
+      "active": true
+    },
+    {
+      "id": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "name": "Tuan Nguyen",
+      "displayName": "tuan.nd",
+      "email": "tuan.nd@raksul.com",
+      "active": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "06be2511-2744-4eee-8788-065feb8c798b",
+      "name": "DM Supplier Flexibility (DM-SF)",
+      "url": "https://linear.app/raksul/project/dm-supplier-flexibility-dm-sf-0268303574ad",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": "2026-06-03",
+      "targetDate": null,
+      "leadId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "memberIds": [
+        "3f2d9fb6-4b17-4695-8c74-372348bd6bce"
+      ],
+      "milestones": [],
+      "priority": 2
+    },
+    {
+      "id": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "name": "DM  Segment-based Design (DM- SBD)",
+      "url": "https://linear.app/raksul/project/dm-segment-based-design-dm-sbd-955f62b3e73d",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": "2026-06-01",
+      "targetDate": "2026-08-18",
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [
+        {
+          "id": "954ad2e4-b82d-42a5-83f7-4b9efd56aab0",
+          "name": "PRD defined",
+          "targetDate": "2026-05-29",
+          "progress": "100%"
+        },
+        {
+          "id": "0183d3cd-df07-4db8-bca7-3cf7be5fb485",
+          "name": "TRD defined",
+          "targetDate": "2026-06-15",
+          "progress": "100%"
+        },
+        {
+          "id": "67334b93-1a95-463d-aeb0-d18616a8c790",
+          "name": "Category Detail Page Refactoring QA",
+          "targetDate": "2026-07-09",
+          "progress": "80%"
+        },
+        {
+          "id": "633289a7-72cd-42e9-bab4-11a348bd729b",
+          "name": "implementation completed",
+          "targetDate": "2026-07-31",
+          "progress": "59%"
+        },
+        {
+          "id": "732857bb-6468-47df-82c1-a35d416ec7a0",
+          "name": "Dev QA completed",
+          "targetDate": "2026-08-07",
+          "progress": "100%"
+        },
+        {
+          "id": "7921a987-ad84-4a0a-915d-d24aaca4c72d",
+          "name": "PdM-CS QA completed",
+          "targetDate": "2026-08-21",
+          "progress": "25%"
+        },
+        {
+          "id": "343fc884-ad60-4f01-a627-19eaf36c0adc",
+          "name": "Stakeholders QA completed",
+          "targetDate": "2026-08-21",
+          "progress": "0%"
+        },
+        {
+          "id": "deb111de-8ebe-4a87-855a-663d43a40210",
+          "name": "Release",
+          "targetDate": "2026-08-25",
+          "progress": "0%"
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "id": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "name": "DM-API Specification Management (DM-APISM)",
+      "url": "https://linear.app/raksul/project/dm-api-specification-management-dm-apism-dd400a97f71b",
+      "status": "In Review",
+      "statusType": "started",
+      "startDate": "2026-06-25",
+      "targetDate": null,
+      "leadId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "memberIds": [
+        "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+        "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [
+        {
+          "id": "32777977-c73e-42d2-8645-359c735a9862",
+          "name": "PRD defined",
+          "targetDate": "2026-05-15",
+          "progress": "0%"
+        },
+        {
+          "id": "a9d68443-92da-41d9-aeba-5e668b542db6",
+          "name": "TRD defined",
+          "targetDate": "2026-05-22",
+          "progress": "0%"
+        },
+        {
+          "id": "4d51d0ad-c972-4b9b-9903-421445949f34",
+          "name": "Implement completed",
+          "targetDate": null,
+          "progress": "0%"
+        },
+        {
+          "id": "62b9e8eb-01a3-44c8-9355-7395d464babd",
+          "name": "Dev QA completed",
+          "targetDate": null,
+          "progress": "0%"
+        },
+        {
+          "id": "b4a22d96-0227-43d0-84f4-1e5cf146a943",
+          "name": "PdM-CS QA completed",
+          "targetDate": null,
+          "progress": "0%"
+        },
+        {
+          "id": "7b6908f1-543e-4f1c-9bb1-788551a12760",
+          "name": "Stakeholder QA completed",
+          "targetDate": null,
+          "progress": "0%"
+        },
+        {
+          "id": "08d807c0-525a-4e52-85dc-ba44426f2ae2",
+          "name": "Release",
+          "targetDate": null,
+          "progress": "0%"
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "id": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "name": "BE-Driven Rendering \u2014 Category Detail page",
+      "url": "https://linear.app/raksul/project/be-driven-rendering-category-detail-page-8b2acb9aad5a",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": "2026-05-13",
+      "targetDate": "2026-07-13",
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "950164b8-f59c-4654-8963-ba1b033cecce",
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+        "94dee770-a241-4583-bc37-4479d2778c83"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "name": "Custom Order Management (DM-COM)",
+      "url": "https://linear.app/raksul/project/custom-order-management-dm-com-1a40d0ceab49",
+      "status": "In Progress",
+      "statusType": "started",
+      "startDate": "2026-04-28",
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+        "28ead434-d6e8-42e2-a43f-81a57bb39286",
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [
+        {
+          "id": "5d431c10-60d3-4392-9b8d-751fb4610b88",
+          "name": "[DM-COM] TRD Finalize - due May 08",
+          "targetDate": "2026-05-08",
+          "progress": "0%"
+        },
+        {
+          "id": "87d220f4-3ebc-4f7a-8475-a18788ae000f",
+          "name": "[DM-COM] Implementation Completed - due May 29",
+          "targetDate": "2026-05-29",
+          "progress": "93%"
+        }
+      ],
+      "priority": 2
+    },
+    {
+      "id": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "name": "DM API Support variable options (DM-APIQR)",
+      "url": "https://linear.app/raksul/project/dm-api-support-variable-options-dm-apiqr-955cf0363432",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": "2026-04-28",
+      "targetDate": null,
+      "leadId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "memberIds": [
+        "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+        "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+        "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+        "94dee770-a241-4583-bc37-4479d2778c83",
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [
+        {
+          "id": "991be64a-e955-45b6-9586-74b34a3a8651",
+          "name": "Dev Testing complete",
+          "targetDate": null,
+          "progress": "100%"
+        }
+      ],
+      "priority": 0
+    },
+    {
+      "id": "79156080-28cb-4040-ba25-45cfb0485c61",
+      "name": "Domain Control (PM-DC)",
+      "url": "https://linear.app/raksul/project/domain-control-pm-dc-6af846b6b4af",
+      "status": "In Progress",
+      "statusType": "started",
+      "startDate": "2026-06-08",
+      "targetDate": null,
+      "leadId": null,
+      "memberIds": [],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "13077758-3241-4bef-9247-9589e65a1842",
+      "name": "Directmail EC2 to ECS Migration (DM-EC2ECS)",
+      "url": "https://linear.app/raksul/project/directmail-ec2-to-ecs-migration-dm-ec2ecs-2ed97a2abf83",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": "2026-04-28",
+      "targetDate": "2026-05-21",
+      "leadId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "memberIds": [
+        "b844ba37-1ce0-4c66-9485-1c5cf2ac859e"
+      ],
+      "milestones": [],
+      "priority": 2
+    },
+    {
+      "id": "f14ed6f1-f5de-4ae3-a861-94cb7ba13474",
+      "name": "DM Data Optimization (DM-DO)",
+      "url": "https://linear.app/raksul/project/dm-data-optimization-dm-do-5504e85b3459",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "d22d75c3-4ac0-41e4-88a7-63172984a631",
+      "name": "DM postcard DM-BIN (DM-PDB)",
+      "url": "https://linear.app/raksul/project/dm-postcard-dm-bin-dm-pdb-bd7e473011f9",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "80c7c8fb-30c1-4cd6-9f16-452b30ef5e0c",
+      "name": "DM API Request Builder Enhance (DM-APIRB)",
+      "url": "https://linear.app/raksul/project/dm-api-request-builder-enhance-dm-apirb-56bf4296388e",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "694b7532-0ab1-43ee-9a08-9e996bbdd977",
+      "name": "DM Weight Pricing (DM-WP)",
+      "url": "https://linear.app/raksul/project/dm-weight-pricing-dm-wp-a2ff5350663f",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "8969233d-df07-46f1-a509-11253290d3ad",
+      "name": "DM API Multiple Recipients (DM-API-MR)",
+      "url": "https://linear.app/raksul/project/dm-api-multiple-recipients-dm-api-mr-4e7378cc8dd1",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "afe82ebe-88cf-4288-a3da-87b5fc9ce97e",
+      "name": "DM Migrate Landing Page (DM-MLP)",
+      "url": "https://linear.app/raksul/project/dm-migrate-landing-page-dm-mlp-928b0559418d",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "name": "DM Personalized (DM-PERS)",
+      "url": "https://linear.app/raksul/project/dm-personalized-dm-pers-d72cd285cb7f",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "memberIds": [
+        "3f2d9fb6-4b17-4695-8c74-372348bd6bce"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "227a290b-b65a-4925-9af3-cf106318e6a8",
+      "name": "DM Bin New Items (DM-BNI)",
+      "url": "https://linear.app/raksul/project/dm-bin-new-items-dm-bni-78dac885e226",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "a7ea6092-bafd-4af6-a381-d26062f975f8",
+      "name": "DM API Partner Ops Enhance (DM-APIPOE)",
+      "url": "https://linear.app/raksul/project/dm-api-partner-ops-enhance-dm-apipoe-04d34acb78b6",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "name": "Backlog",
+      "url": "https://linear.app/raksul/project/backlog-9e34bae8a2a6",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "e3d9a07e-cbd4-40b6-bb2c-a7193b3e384a",
+      "name": "DM Address List Auto Correction (DM-ALAC)",
+      "url": "https://linear.app/raksul/project/dm-address-list-auto-correction-dm-alac-3a9e137e1744",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "memberIds": [
+        "c528cf52-45d9-4110-b4bd-4bb011bf8c05"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "ea74e82d-073e-434e-9ab3-02f60e96f499",
+      "name": "DM Mailing Japan Tariff (DM-MJT)",
+      "url": "https://linear.app/raksul/project/dm-mailing-japan-tariff-dm-mjt-fef1cf745c11",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "3484aebe-3d52-43d1-94f4-6db8f698ed9a",
+      "name": "DM Postcard Crimp (DM-PC)",
+      "url": "https://linear.app/raksul/project/dm-postcard-crimp-dm-pc-68153118f37f",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "dd4b4e7c-0066-4929-9439-ecf228482dd2",
+      "name": "DM API Dev Mode (DM-API-DM)",
+      "url": "https://linear.app/raksul/project/dm-api-dev-mode-dm-api-dm-1b6aef56f9eb",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "memberIds": [
+        "9abd65f9-2d82-41f8-8773-570d1d210c7e"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "1cdf2842-cfdc-4240-b0b2-be9dde555cf0",
+      "name": "DM Raksul Point (DM-RP)",
+      "url": "https://linear.app/raksul/project/dm-raksul-point-dm-rp-40341103575d",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "memberIds": [
+        "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "c6e161ec-f2d3-4020-89df-95d378a3a6be",
+      "name": "DM API v1 (DM-API v1)",
+      "url": "https://linear.app/raksul/project/dm-api-v1-dm-api-v1-e883ec3a6f54",
+      "status": "Completed",
+      "statusType": "completed",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "13441b59-358f-4097-b9db-13ab1134dad2",
+      "memberIds": [
+        "13441b59-358f-4097-b9db-13ab1134dad2"
+      ],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "c3c63e8c-b30c-417f-aa45-5916b449d8bd",
+      "name": "DM Refactoring (DM-RE)",
+      "url": "https://linear.app/raksul/project/dm-refactoring-dm-re-f9978aca2bd4",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "memberIds": [
+        "38b45d3a-0244-4b6e-af34-dbf5b543706a"
+      ],
+      "milestones": [],
+      "priority": 0
+    }
+  ],
+  "cycles": [
+    {
+      "id": "03ca92cd-e553-44d9-bd29-4d3e98d0c213",
+      "number": 11,
+      "startsAt": "2026-08-27T17:00:00.000Z",
+      "endsAt": "2026-09-10T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": false
+    },
+    {
+      "id": "871b399e-1563-4095-8d04-f62bd9acb5a4",
+      "number": 10,
+      "startsAt": "2026-08-13T17:00:00.000Z",
+      "endsAt": "2026-08-27T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": false
+    },
+    {
+      "id": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "number": 9,
+      "startsAt": "2026-08-09T17:00:00.000Z",
+      "endsAt": "2026-08-13T17:00:00.000Z",
+      "isCurrent": true,
+      "isCompleted": false
+    },
+    {
+      "id": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "number": 8,
+      "startsAt": "2026-07-26T17:00:00.000Z",
+      "endsAt": "2026-08-09T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "number": 7,
+      "startsAt": "2026-07-12T17:00:00.000Z",
+      "endsAt": "2026-07-26T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "number": 6,
+      "startsAt": "2026-06-28T17:00:00.000Z",
+      "endsAt": "2026-07-12T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "number": 5,
+      "startsAt": "2026-06-14T17:00:00.000Z",
+      "endsAt": "2026-06-28T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "number": 4,
+      "startsAt": "2026-06-04T17:00:00.000Z",
+      "endsAt": "2026-06-14T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "number": 3,
+      "startsAt": "2026-05-21T17:00:00.000Z",
+      "endsAt": "2026-06-04T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "number": 2,
+      "startsAt": "2026-05-03T17:00:00.000Z",
+      "endsAt": "2026-05-21T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    },
+    {
+      "id": "2344a4f8-1e9f-488c-9e22-f08ffe30ecb4",
+      "number": 1,
+      "startsAt": "2026-04-19T15:00:00.000Z",
+      "endsAt": "2026-04-26T15:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": true
+    }
+  ],
+  "actualWork": [
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 7
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 18
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "13077758-3241-4bef-9247-9589e65a1842",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "1dba04c8-d851-4c57-8144-ea6e80d62c60",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 5
+    },
+    {
+      "cycleId": "2344a4f8-1e9f-488c-9e22-f08ffe30ecb4",
+      "memberId": "8382cd5d-fab2-4fd3-8a16-16d89b0d008a",
+      "projectId": "ea74e82d-073e-434e-9ab3-02f60e96f499",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 6
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 6
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "36e985dc-c71b-41f2-a289-8e22fa6af80d",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 13
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 11
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "61cb4466-dce9-4397-bb5c-b473200c90f3",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "13077758-3241-4bef-9247-9589e65a1842",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "issueCount": 5
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 61
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 6
+    },
+    {
+      "cycleId": "b4e2b059-ff38-4c8f-94b3-72bba82d72f6",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "e3d9a07e-cbd4-40b6-bb2c-a7193b3e384a",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dd4b4e7c-0066-4929-9439-ecf228482dd2",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "950164b8-f59c-4654-8963-ba1b033cecce",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "84017f09-d4b8-4a8c-b246-1f269d9912b3",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "13077758-3241-4bef-9247-9589e65a1842",
+      "issueCount": 6
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b549504b-6786-4cba-9dd9-447985f5e3c2",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "ea74e82d-073e-434e-9ab3-02f60e96f499",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "5964d3ca-696e-4035-8bde-a88d39ae37f5",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "2dca06be-9efd-43ed-af96-a2069dae563b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
+      "projectId": "d51b30f8-035f-420e-92cc-f0b624d0d465",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "afa9e52b-de45-4478-a882-b0855b015a60",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "13077758-3241-4bef-9247-9589e65a1842",
+      "issueCount": 6
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 10
+    },
+    {
+      "cycleId": "cf592c8b-7227-4f6f-9c32-9735d563cda3",
+      "memberId": "e0ad7b75-9949-4851-846b-ba0ae15b2625",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 2
+    }
+  ]
+}

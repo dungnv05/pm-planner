@@ -4,6 +4,7 @@ import { ActualWorkloadLayer } from './ActualWorkloadLayer'
 import { firstMondayOfMonth } from '../lib/dates'
 import {
   LANE_H,
+  LANE_PAD_Y,
   type TimelineScale,
   colWidth,
   memberLanesForProject,
@@ -19,6 +20,7 @@ interface Props {
   cycles: Cycle[]
   actualWork: ActualWork[]
   selectedMemberIds: string[]
+  memberFilterActive: boolean
   onDropMember: (projectId: string, weekMonday: string, memberId: string) => void
   onMoveAssignment: (id: string, startWeek: string, endWeek: string) => void
   onEditAssignment: (assignment: Assignment) => void
@@ -35,6 +37,7 @@ export function ProjectRow({
   cycles,
   actualWork,
   selectedMemberIds,
+  memberFilterActive,
   onDropMember,
   onMoveAssignment,
   onEditAssignment,
@@ -54,12 +57,11 @@ export function ProjectRow({
     completedIds,
     nameOf,
   )
-  const lanes =
-    selectedMemberIds.length > 0
-      ? allLanes.filter((id) => selectedMemberIds.includes(id))
-      : allLanes
+  const lanes = memberFilterActive
+    ? allLanes.filter((id) => selectedMemberIds.includes(id))
+    : allLanes
 
-  if (selectedMemberIds.length > 0 && lanes.length === 0) {
+  if (memberFilterActive && lanes.length === 0) {
     return null
   }
 
@@ -129,7 +131,7 @@ export function ProjectRow({
                     weeks={weeks}
                     months={months}
                     scale={scale}
-                    laneTop={4}
+                    laneTop={LANE_PAD_Y}
                     onMove={onMoveAssignment}
                     onEdit={onEditAssignment}
                     onRemove={onRemoveAssignment}
@@ -143,7 +145,7 @@ export function ProjectRow({
                   weeks={weeks}
                   months={months}
                   scale={scale}
-                  laneTop={4}
+                  laneTop={LANE_PAD_Y}
                   members={members}
                   actualWork={actualWork}
                   assignments={assignments}

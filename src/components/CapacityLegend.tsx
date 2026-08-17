@@ -14,6 +14,14 @@ export function CapacityLegend() {
         FY half over (darker = more over 100%)
       </div>
       <div className="legend-item">
+        <span className="swatch" style={{ background: 'var(--holiday-jp)' }} />
+        JP holiday
+      </div>
+      <div className="legend-item">
+        <span className="swatch" style={{ background: 'var(--holiday-vn)' }} />
+        VN holiday
+      </div>
+      <div className="legend-item">
         <span className="swatch" style={{ background: 'var(--plan-bar)' }} />
         Plan assignment
       </div>

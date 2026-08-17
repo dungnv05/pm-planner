@@ -49,7 +49,10 @@ export default function App() {
     defaultSelectedStatuses(snapshot.projects ?? []),
   )
   const [scale, setScale] = useState<TimelineScale>('week')
-  const [selectedMemberIds, setSelectedMemberIds] = useState<string[]>([])
+  const [visibleMemberIds, setVisibleMemberIds] = useState<string[]>(() =>
+    (snapshot.members ?? []).filter((m) => m.active).map((m) => m.id),
+  )
+  const [focusedMemberIds, setFocusedMemberIds] = useState<string[]>([])
   const [pendingDrop, setPendingDrop] = useState<{
     memberId: string
     projectId: string
@@ -67,6 +70,17 @@ export default function App() {
   const fyHalf = useMemo(() => fiscalHalfFromDate(new Date()), [])
 
   const members: Member[] = snapshot.members ?? []
+  const activeMemberIds = useMemo(
+    () => members.filter((m) => m.active).map((m) => m.id),
+    [members],
+  )
+  const focusedInView = focusedMemberIds.filter((id) => visibleMemberIds.includes(id))
+  const allVisible =
+    activeMemberIds.length > 0 &&
+    activeMemberIds.length === visibleMemberIds.length &&
+    activeMemberIds.every((id) => visibleMemberIds.includes(id))
+  const timelineMemberIds = focusedInView.length > 0 ? focusedInView : visibleMemberIds
+  const memberFilterActive = focusedInView.length > 0 || !allVisible
   const projects: Project[] = useMemo(() => {
     const list = snapshot.projects ?? []
     return list.filter((p) => selectedStatuses.includes(p.status))
@@ -181,13 +195,18 @@ export default function App() {
           members={members}
           fyLabel={fyHalf.label}
           capacityByMember={capacityByMember}
-          selectedMemberIds={selectedMemberIds}
-          onToggleMember={(id) => {
-            setSelectedMemberIds((prev) =>
+          visibleMemberIds={visibleMemberIds}
+          focusedMemberIds={focusedInView}
+          onChangeVisible={(next) => {
+            setVisibleMemberIds(next)
+            setFocusedMemberIds((prev) => prev.filter((id) => next.includes(id)))
+          }}
+          onToggleFocus={(id) => {
+            setFocusedMemberIds((prev) =>
               prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
             )
           }}
-          onClearFilter={() => setSelectedMemberIds([])}
+          onClearFocus={() => setFocusedMemberIds([])}
           onDragStart={() => undefined}
         />
         <TimelineBoard
@@ -199,7 +218,8 @@ export default function App() {
           assignments={assignmentsFile.assignments}
           cycles={snapshot.cycles ?? []}
           actualWork={snapshot.actualWork ?? []}
-          selectedMemberIds={selectedMemberIds}
+          selectedMemberIds={timelineMemberIds}
+          memberFilterActive={memberFilterActive}
           onDropMember={(projectId, week, memberId) => {
             setPendingDrop({ memberId, projectId, week, initial: 1 })
           }}

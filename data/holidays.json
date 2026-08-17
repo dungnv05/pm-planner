@@ -1,0 +1,90 @@
+{
+  "holidays": [
+    {
+      "id": "jp-obon-2026",
+      "name": "Obon",
+      "country": "JP",
+      "start": "2026-08-13",
+      "end": "2026-08-16"
+    },
+    {
+      "id": "vn-national-day-2026",
+      "name": "National Day",
+      "country": "VN",
+      "start": "2026-08-29",
+      "end": "2026-09-02"
+    },
+    {
+      "id": "jp-new-year-2026",
+      "name": "Year-end / New Year",
+      "country": "JP",
+      "start": "2026-12-29",
+      "end": "2027-01-03"
+    },
+    {
+      "id": "vn-tet-2027",
+      "name": "Tết",
+      "country": "VN",
+      "start": "2027-02-04",
+      "end": "2027-02-10",
+      "note": "Proposed 7-day break"
+    },
+    {
+      "id": "jp-golden-week-2027",
+      "name": "Golden Week",
+      "country": "JP",
+      "start": "2027-04-29",
+      "end": "2027-05-05"
+    },
+    {
+      "id": "vn-reunification-labor-2027",
+      "name": "30/4 + 1/5",
+      "country": "VN",
+      "start": "2027-04-30",
+      "end": "2027-05-03"
+    },
+    {
+      "id": "jp-obon-2027",
+      "name": "Obon",
+      "country": "JP",
+      "start": "2027-08-13",
+      "end": "2027-08-16"
+    },
+    {
+      "id": "vn-national-day-2027",
+      "name": "National Day",
+      "country": "VN",
+      "start": "2027-09-02",
+      "end": "2027-09-05",
+      "note": "Proposed 4-day break"
+    },
+    {
+      "id": "jp-new-year-2027",
+      "name": "Year-end / New Year",
+      "country": "JP",
+      "start": "2027-12-29",
+      "end": "2028-01-03"
+    },
+    {
+      "id": "vn-tet-2028",
+      "name": "Tết",
+      "country": "VN",
+      "start": "2028-01-25",
+      "end": "2028-01-30"
+    },
+    {
+      "id": "jp-golden-week-2028",
+      "name": "Golden Week",
+      "country": "JP",
+      "start": "2028-04-29",
+      "end": "2028-05-05"
+    },
+    {
+      "id": "vn-reunification-labor-2028",
+      "name": "30/4 + 1/5",
+      "country": "VN",
+      "start": "2028-04-30",
+      "end": "2028-05-02"
+    }
+  ]
+}

@@ -38,6 +38,12 @@ export function monthsForHalf(fy: number, half: FiscalHalfId): string[] {
   return keys
 }
 
+/** FY quarter starts: Aug, Nov, Feb, May. */
+export function isFiscalQuarterStart(monthKeyStr: string): boolean {
+  const m = Number(monthKeyStr.slice(5, 7))
+  return m === 2 || m === 5 || m === 8 || m === 11
+}
+
 /** FY half containing `d` (defaults to today). FY starts in August. */
 export function fiscalHalfFromDate(d: Date = new Date()): FiscalHalf {
   const fy = fyYear(d)

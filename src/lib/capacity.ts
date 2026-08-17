@@ -8,6 +8,7 @@ import {
   weekOverlapInMonth,
   weeksInclusive,
 } from './dates'
+import { longHolidayWeekMondays } from './holidays'
 
 /**
  * Monthly capacity for a member: average of (sum of allocations per week)
@@ -107,11 +108,16 @@ export function halfCapacityColor(value: number): string {
   return `hsl(5 ${s}% ${l}%)`
 }
 
-/** Average plan allocation across every week in the FY half (unassigned weeks count as 0). */
+/**
+ * Average plan allocation across weeks in the FY half (unassigned weeks count as 0).
+ * Weeks that contain a long VN holiday (majority week) are excluded.
+ * JP holidays still count as normal working weeks.
+ */
 export function memberHalfCapacity(
   memberId: string,
   half: FiscalHalf,
   assignments: Assignment[],
+  skipWeeks: Set<string> = longHolidayWeekMondays(),
 ): number {
   const weeks = weeksInclusive(
     firstMondayOfMonth(half.months[0]),
@@ -121,6 +127,7 @@ export function memberHalfCapacity(
   const weekWeight = new Map<string, number>()
 
   for (const w of weeks) {
+    if (skipWeeks.has(w)) continue
     let weight = 0
     for (const month of half.months) weight += weekOverlapInMonth(w, month)
     if (weight <= 0) continue

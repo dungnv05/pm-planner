@@ -41,9 +41,13 @@ export function exportAssignmentsJson(data: AssignmentsFile): void {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
-  a.download = 'assignments.json'
+  a.download = `assignments-${timestampPostfix(new Date())}.json`
   a.click()
   URL.revokeObjectURL(url)
+}
+
+function timestampPostfix(d: Date): string {
+  return d.toISOString().replace(/[-:]/g, '').replace(/\.\d+Z$/, 'Z')
 }
 
 export async function importAssignmentsJson(file: File): Promise<AssignmentsFile> {

@@ -127,6 +127,50 @@ select {
   margin-left: -1px;
 }
 
+.status-filter {
+  position: relative;
+}
+
+.status-filter-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  min-width: 220px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.status-filter-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.status-filter-actions .btn {
+  flex: 1;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+
+.status-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.status-filter-option:hover,
+.status-filter-option.selected {
+  background: var(--accent-soft);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 240px 1fr;

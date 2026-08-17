@@ -1,5 +1,13 @@
 import type { Assignment } from '../types'
-import { monthKey, parseISODate, weekOverlapInMonth, weeksInclusive } from './dates'
+import type { FiscalHalf } from './fiscalYear'
+import {
+  firstMondayOfMonth,
+  lastMondayInMonth,
+  monthKey,
+  parseISODate,
+  weekOverlapInMonth,
+  weeksInclusive,
+} from './dates'
 
 /**
  * Monthly capacity for a member: average of (sum of allocations per week)
@@ -75,6 +83,80 @@ export function capacityColor(value: number): string {
     case 'over-deep':
       return 'var(--cap-over-3)'
   }
+}
+
+function lerp(a: number, b: number, t: number): number {
+  return a + (b - a) * t
+}
+
+/**
+ * Sidebar chip color for FY-half workload.
+ * Under: yellow, darker as value → 0. Full: green. Over: red, darker as value → 200%.
+ */
+export function halfCapacityColor(value: number): string {
+  if (value >= 0.99 && value <= 1.01) return 'var(--cap-full)'
+  if (value < 0.99) {
+    const t = Math.min(1, Math.max(0, value / 0.99))
+    const l = lerp(28, 48, t)
+    const s = lerp(88, 78, t)
+    return `hsl(42 ${s}% ${l}%)`
+  }
+  const t = Math.min(1, Math.max(0, (value - 1.01) / 0.99))
+  const l = lerp(56, 28, t)
+  const s = lerp(70, 82, t)
+  return `hsl(5 ${s}% ${l}%)`
+}
+
+/** Average plan allocation across every week in the FY half (unassigned weeks count as 0). */
+export function memberHalfCapacity(
+  memberId: string,
+  half: FiscalHalf,
+  assignments: Assignment[],
+): number {
+  const weeks = weeksInclusive(
+    firstMondayOfMonth(half.months[0]),
+    lastMondayInMonth(half.months[half.months.length - 1]),
+  )
+  const weekAlloc = new Map<string, number>()
+  const weekWeight = new Map<string, number>()
+
+  for (const w of weeks) {
+    let weight = 0
+    for (const month of half.months) weight += weekOverlapInMonth(w, month)
+    if (weight <= 0) continue
+    weekWeight.set(w, Math.min(1, weight))
+    weekAlloc.set(w, 0)
+  }
+
+  for (const a of assignments) {
+    if (a.memberId !== memberId) continue
+    for (const w of weeksInclusive(a.startWeek, a.endWeek)) {
+      if (!weekAlloc.has(w)) continue
+      weekAlloc.set(w, (weekAlloc.get(w) ?? 0) + a.allocation)
+    }
+  }
+
+  if (weekWeight.size === 0) return 0
+
+  let weightedSum = 0
+  let weightTotal = 0
+  for (const [w, weight] of weekWeight) {
+    weightedSum += (weekAlloc.get(w) ?? 0) * weight
+    weightTotal += weight
+  }
+  return weightTotal === 0 ? 0 : weightedSum / weightTotal
+}
+
+export function buildHalfCapacityMap(
+  memberIds: string[],
+  half: FiscalHalf,
+  assignments: Assignment[],
+): Record<string, number> {
+  const out: Record<string, number> = {}
+  for (const id of memberIds) {
+    out[id] = memberHalfCapacity(id, half, assignments)
+  }
+  return out
 }
 
 export function formatPct(value: number): string {

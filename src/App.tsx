@@ -1,19 +1,20 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import snapshotData from '../data/linear-snapshot.json'
 import assignmentsSeed from '../data/assignments.json'
-import type { Assignment, AssignmentsFile, LinearSnapshot, Member, Project } from './types'
+import type { Assignment, AssignmentsFile, Member, Project } from './types'
+import { loadLatestSnapshot } from './lib/loadSnapshot'
 import { MemberPool } from './components/MemberPool'
 import { TimelineBoard } from './components/TimelineBoard'
 import { AllocationPicker } from './components/AllocationPicker'
 import { CapacityLegend } from './components/CapacityLegend'
 import { CycleComparePanel } from './components/CycleCompareTooltip'
-import { buildCapacityMap } from './lib/capacity'
+import { ProjectStatusFilter, defaultSelectedStatuses } from './components/ProjectStatusFilter'
+import { buildHalfCapacityMap } from './lib/capacity'
+import { fiscalHalfFromDate } from './lib/fiscalYear'
 import {
   addMonths,
   buildWindowMonths,
   buildWindowWeeks,
   defaultWindowStart,
-  monthKey,
   toISODate,
   startOfMonth,
   parseISODate,
@@ -34,7 +35,7 @@ function uid(): string {
 }
 
 export default function App() {
-  const snapshot = snapshotData as LinearSnapshot
+  const snapshot = loadLatestSnapshot()
   const seed = assignmentsSeed as AssignmentsFile
 
   const [assignmentsFile, setAssignmentsFile] = useState<AssignmentsFile>(() =>
@@ -44,7 +45,9 @@ export default function App() {
         : { ...emptyAssignments(), windowStart: seed.windowStart || defaultWindowStart() },
     ),
   )
-  const [showAllProjects, setShowAllProjects] = useState(false)
+  const [selectedStatuses, setSelectedStatuses] = useState<string[]>(() =>
+    defaultSelectedStatuses(snapshot.projects ?? []),
+  )
   const [scale, setScale] = useState<TimelineScale>('week')
   const [selectedMemberIds, setSelectedMemberIds] = useState<string[]>([])
   const [pendingDrop, setPendingDrop] = useState<{
@@ -61,33 +64,22 @@ export default function App() {
   const windowStart = assignmentsFile.windowStart || defaultWindowStart()
   const weeks = useMemo(() => buildWindowWeeks(windowStart, MONTH_COUNT), [windowStart])
   const months = useMemo(() => buildWindowMonths(windowStart, MONTH_COUNT), [windowStart])
-  const focusMonth = useMemo(() => {
-    const current = monthKey(new Date())
-    if (months.includes(current)) return current
-    return months[Math.floor(months.length / 2)] ?? current
-  }, [months])
+  const fyHalf = useMemo(() => fiscalHalfFromDate(new Date()), [])
 
   const members: Member[] = snapshot.members ?? []
   const projects: Project[] = useMemo(() => {
     const list = snapshot.projects ?? []
-    if (showAllProjects) return list
-    return list.filter((p) => p.statusType !== 'completed' && p.statusType !== 'canceled')
-  }, [snapshot.projects, showAllProjects])
+    return list.filter((p) => selectedStatuses.includes(p.status))
+  }, [snapshot.projects, selectedStatuses])
 
-  const capacityMap = useMemo(
-    () => buildCapacityMap(
+  const capacityByMember = useMemo(
+    () => buildHalfCapacityMap(
       members.map((m) => m.id),
-      months,
+      fyHalf,
       assignmentsFile.assignments,
     ),
-    [members, months, assignmentsFile.assignments],
+    [members, fyHalf, assignmentsFile.assignments],
   )
-
-  const capacityFocus = useMemo(() => {
-    const out: Record<string, number> = {}
-    for (const m of members) out[m.id] = capacityMap[m.id]?.[focusMonth] ?? 0
-    return out
-  }, [members, capacityMap, focusMonth])
 
   useEffect(() => {
     saveAssignmentsToStorage(assignmentsFile)
@@ -149,14 +141,11 @@ export default function App() {
               By month
             </button>
           </div>
-          <label className="btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-            <input
-              type="checkbox"
-              checked={showAllProjects}
-              onChange={(e) => setShowAllProjects(e.target.checked)}
-            />
-            Show completed
-          </label>
+          <ProjectStatusFilter
+            projects={snapshot.projects ?? []}
+            selected={selectedStatuses}
+            onChange={setSelectedStatuses}
+          />
           <button
             type="button"
             className="btn"
@@ -190,8 +179,8 @@ export default function App() {
       <div className="layout">
         <MemberPool
           members={members}
-          focusMonth={focusMonth}
-          capacityByMember={capacityFocus}
+          fyLabel={fyHalf.label}
+          capacityByMember={capacityByMember}
           selectedMemberIds={selectedMemberIds}
           onToggleMember={(id) => {
             setSelectedMemberIds((prev) =>

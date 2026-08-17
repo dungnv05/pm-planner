@@ -1,9 +1,9 @@
 import type { Member } from '../types'
-import { capacityColor, formatPct } from '../lib/capacity'
+import { formatPct, halfCapacityColor } from '../lib/capacity'
 
 interface Props {
   members: Member[]
-  focusMonth: string
+  fyLabel: string
   capacityByMember: Record<string, number>
   selectedMemberIds: string[]
   onToggleMember: (memberId: string) => void
@@ -13,7 +13,7 @@ interface Props {
 
 export function MemberPool({
   members,
-  focusMonth,
+  fyLabel,
   capacityByMember,
   selectedMemberIds,
   onToggleMember,
@@ -25,7 +25,7 @@ export function MemberPool({
 
   return (
     <aside className="member-pool">
-      <h2>Members · {focusMonth}</h2>
+      <h2>Members · {fyLabel}</h2>
       {filtering && (
         <button type="button" className="btn clear-filter" onClick={onClearFilter}>
           Clear filter ({selectedMemberIds.length})
@@ -56,7 +56,7 @@ export function MemberPool({
             <span className="member-name" title={m.email}>
               {m.displayName || m.name}
             </span>
-            <span className="cap-chip" style={{ background: capacityColor(cap) }}>
+            <span className="cap-chip" style={{ background: halfCapacityColor(cap) }}>
               {formatPct(cap)}
             </span>
           </div>

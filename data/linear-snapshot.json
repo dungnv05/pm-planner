@@ -1,5 +1,6 @@
 {
-  "syncedAt": "2026-08-12T06:17:14.000Z",
+  "syncedAt": "2026-08-17T09:18:29.000Z",
+  "syncMode": "recent",
   "team": {
     "id": "f2d94035-748c-4cdb-a422-4c64a94b52a4",
     "key": "ENPRVN",
@@ -151,6 +152,58 @@
   ],
   "projects": [
     {
+      "id": "81fb4eb5-d0fe-4b68-9023-b9ffadbf53b0",
+      "name": "DM Operation Improvement of Yu-Mail in DM-BIN",
+      "url": "https://linear.app/raksul/project/dm-operation-improvement-of-yu-mail-in-dm-bin-775605b6e889",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": null,
+      "memberIds": [],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "58759835-f326-425c-b8d4-5a1491bc9b97",
+      "name": "DM Yu-Mail weight pricing",
+      "url": "https://linear.app/raksul/project/dm-yu-mail-weight-pricing-2aba4484859d",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": null,
+      "memberIds": [],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "a7bb8d3c-2316-409c-92dd-18de49f9d205",
+      "name": "DM EC New UI",
+      "url": "https://linear.app/raksul/project/dm-ec-new-ui-8a8bd8dab31a",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": null,
+      "memberIds": [],
+      "milestones": [],
+      "priority": 0
+    },
+    {
+      "id": "c4f9ad4a-3993-41f7-9fbd-23ca96984982",
+      "name": "DM EC Variable QR Dashboard",
+      "url": "https://linear.app/raksul/project/dm-ec-variable-qr-dashboard-ffbf35a8727e",
+      "status": "Backlog",
+      "statusType": "backlog",
+      "startDate": null,
+      "targetDate": null,
+      "leadId": null,
+      "memberIds": [],
+      "milestones": [],
+      "priority": 0
+    },
+    {
       "id": "06be2511-2744-4eee-8788-065feb8c798b",
       "name": "DM Supplier Flexibility (DM-SF)",
       "url": "https://linear.app/raksul/project/dm-supplier-flexibility-dm-sf-0268303574ad",
@@ -171,8 +224,8 @@
       "url": "https://linear.app/raksul/project/dm-segment-based-design-dm-sbd-955f62b3e73d",
       "status": "In Progress",
       "statusType": "started",
-      "startDate": "2026-06-01",
-      "targetDate": "2026-08-25",
+      "startDate": "2026-08-17",
+      "targetDate": "2026-08-21",
       "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
       "memberIds": [
         "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
@@ -233,8 +286,8 @@
       "id": "2dca06be-9efd-43ed-af96-a2069dae563b",
       "name": "DM-API Specification Management (DM-APISM)",
       "url": "https://linear.app/raksul/project/dm-api-specification-management-dm-apism-dd400a97f71b",
-      "status": "In Review",
-      "statusType": "started",
+      "status": "Completed",
+      "statusType": "completed",
       "startDate": "2026-06-25",
       "targetDate": null,
       "leadId": "9abd65f9-2d82-41f8-8773-570d1d210c7e",
@@ -291,7 +344,7 @@
     },
     {
       "id": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
-      "name": "BE-Driven Rendering — Category Detail page",
+      "name": "BE-Driven Rendering \u2014 Category Detail page",
       "url": "https://linear.app/raksul/project/be-driven-rendering-category-detail-page-8b2acb9aad5a",
       "status": "Completed",
       "statusType": "completed",
@@ -308,8 +361,8 @@
     },
     {
       "id": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
-      "name": "Custom Order Management (DM-COM)",
-      "url": "https://linear.app/raksul/project/custom-order-management-dm-com-1a40d0ceab49",
+      "name": "DM Custom Order Management (DM-COM)",
+      "url": "https://linear.app/raksul/project/dm-custom-order-management-dm-com-1a40d0ceab49",
       "status": "In Progress",
       "statusType": "started",
       "startDate": "2026-04-28",
@@ -530,8 +583,8 @@
       "id": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
       "name": "Backlog",
       "url": "https://linear.app/raksul/project/backlog-9e34bae8a2a6",
-      "status": "Backlog",
-      "statusType": "backlog",
+      "status": "Planned",
+      "statusType": "planned",
       "startDate": null,
       "targetDate": null,
       "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
@@ -635,8 +688,8 @@
       "id": "c3c63e8c-b30c-417f-aa45-5916b449d8bd",
       "name": "DM Refactoring (DM-RE)",
       "url": "https://linear.app/raksul/project/dm-refactoring-dm-re-f9978aca2bd4",
-      "status": "Backlog",
-      "statusType": "backlog",
+      "status": "Planned",
+      "statusType": "planned",
       "startDate": null,
       "targetDate": null,
       "leadId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
@@ -648,6 +701,14 @@
     }
   ],
   "cycles": [
+    {
+      "id": "48d09b2f-a4fc-4c5f-84f6-37200914bf58",
+      "number": 12,
+      "startsAt": "2026-09-10T17:00:00.000Z",
+      "endsAt": "2026-09-24T17:00:00.000Z",
+      "isCurrent": false,
+      "isCompleted": false
+    },
     {
       "id": "03ca92cd-e553-44d9-bd29-4d3e98d0c213",
       "number": 11,
@@ -661,7 +722,7 @@
       "number": 10,
       "startsAt": "2026-08-13T17:00:00.000Z",
       "endsAt": "2026-08-27T17:00:00.000Z",
-      "isCurrent": false,
+      "isCurrent": true,
       "isCompleted": false
     },
     {
@@ -669,8 +730,8 @@
       "number": 9,
       "startsAt": "2026-08-09T17:00:00.000Z",
       "endsAt": "2026-08-13T17:00:00.000Z",
-      "isCurrent": true,
-      "isCompleted": false
+      "isCurrent": false,
+      "isCompleted": true
     },
     {
       "id": "61cb4466-dce9-4397-bb5c-b473200c90f3",
@@ -1028,6 +1089,60 @@
     },
     {
       "cycleId": "7afef149-4262-443a-a71f-cae3f574cbba",
+      "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
+      "projectId": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "28ead434-d6e8-42e2-a43f-81a57bb39286",
+      "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "38b45d3a-0244-4b6e-af34-dbf5b543706a",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 1
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 3
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "94dee770-a241-4583-bc37-4479d2778c83",
+      "projectId": "9d27b2cc-38e5-4b9e-acfd-af7b6d94086f",
+      "issueCount": 4
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
+      "memberId": "971e54ef-3593-4c4e-856d-c1a71e6521d0",
+      "projectId": "1fb825c7-7e9e-42b6-bb31-c90e7eabad99",
+      "issueCount": 7
+    },
+    {
+      "cycleId": "b2c487ba-5325-443a-8f77-e7bdcaec2a37",
       "memberId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
       "projectId": "cb4cef4d-810a-45dc-9553-cf5b78df628b",
       "issueCount": 1

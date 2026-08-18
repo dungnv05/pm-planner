@@ -33,16 +33,24 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 In Cursor, ask the agent to run the **linear-enprvn-sync** skill (`.cursor/skills/linear-enprvn-sync/`).
 
 - **Default (`recent`)**: refresh members/projects/cycles + `actualWork` for the **2 newest completed cycles** only (cheaper).
+- **Projects**: say **“Linear project sync”** / **“Linear projects sync”** to refresh the project list only (new Linear projects). Keeps members, cycles, and actualWork.
+- **Members**: say **“Linear member sync”** / **“Linear members sync”** to refresh the member list only (new teammates). Keeps projects, cycles, and actualWork.
 - **Full**: say “full sync” / “sync all cycles” when you need to rebuild actualWork for every completed cycle.
 
-It updates `data/linear-snapshot.json` only — never overwrites `data/assignments.json`.
+Each run writes a **new timestamped snapshot** and does **not** overwrite older versions:
 
-After sync, restart or refresh the app to load the new snapshot.
+- Local archive: `data/snapshots/linear-snapshot-YYYYMMDDTHHmmssZ.json` (gitignored)
+- Latest pointer (committed fallback): `data/linear-snapshot.json`
+- Shared archive: [Resource planner data sync](https://app.notion.com/p/Resource-planner-data-sync-3bf41a31f12d804e98cbdfa4cf1fc3cb) — newest file is prepended on the page
+
+The web app loads the **newest timestamped file** in `data/snapshots/` for completed-cycle actuals. If that folder is empty (fresh clone), it falls back to `data/linear-snapshot.json`. Refresh the app after sync.
+
+Never overwrites `data/assignments.json`.
 
 ## Assignments persistence
 
 - Edits are saved to **localStorage** automatically
-- **Export** downloads `assignments.json` (commit this file to share plans)
+- **Export** downloads `assignments-YYYYMMDDTHHmmssZ.json` (commit `data/assignments.json` to share plans)
 - **Import** loads an exported assignments file
 
 Seed file: `data/assignments.json` (`windowStart` defaults to `2026-03-02` for a 6-month window covering recent cycles).
@@ -53,7 +61,7 @@ Seed file: `data/assignments.json` (`windowStart` defaults to `2026-03-02` for a
 2. Drag or resize plan bars on the timeline
 3. Double-click a plan bar to change %; Delete/Backspace to remove
 4. Click a **completed** cycle band (dashed) to open Plan vs Actual compare
-5. Toggle **Show completed** to include finished Linear projects
+5. Use **Status** in the header to filter projects (default hides Completed / Canceled)
 
 ## Stack
 

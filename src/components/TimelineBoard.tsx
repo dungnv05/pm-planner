@@ -1,10 +1,18 @@
+import { useEffect, useRef, useState } from 'react'
 import type { ActualWork, Assignment, Cycle, Member, Project } from '../types'
 import { formatMonthLabel, parseISODate } from '../lib/dates'
+import { isFiscalQuarterStart } from '../lib/fiscalYear'
+import {
+  holidayGroupsInWindow,
+  holidaysInWindow,
+  holidayTooltip,
+} from '../lib/holidays'
 import { ProjectRow } from './ProjectRow'
 import {
   type TimelineScale,
   colWidth,
   cycleColSpan,
+  fiscalQuarterColIndexes,
 } from '../lib/timeline'
 
 interface Props {
@@ -17,6 +25,7 @@ interface Props {
   cycles: Cycle[]
   actualWork: ActualWork[]
   selectedMemberIds: string[]
+  memberFilterActive: boolean
   onDropMember: (projectId: string, weekMonday: string, memberId: string) => void
   onMoveAssignment: (id: string, startWeek: string, endWeek: string) => void
   onEditAssignment: (assignment: Assignment) => void
@@ -34,6 +43,7 @@ export function TimelineBoard({
   cycles,
   actualWork,
   selectedMemberIds,
+  memberFilterActive,
   onDropMember,
   onMoveAssignment,
   onEditAssignment,
@@ -42,6 +52,30 @@ export function TimelineBoard({
 }: Props) {
   const cols = scale === 'week' ? weeks : months
   const cw = colWidth(scale)
+  const trackWidth = cols.length * cw
+  const quarterCols = fiscalQuarterColIndexes(scale, weeks, months)
+  const holidaySpans = holidaysInWindow(scale, weeks, months)
+  const holidayGroups = holidayGroupsInWindow(scale, weeks, months)
+  const [openHolidayCol, setOpenHolidayCol] = useState<number | null>(null)
+  const holidayRowRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (openHolidayCol === null) return
+    const onDown = (e: MouseEvent) => {
+      if (holidayRowRef.current && !holidayRowRef.current.contains(e.target as Node)) {
+        setOpenHolidayCol(null)
+      }
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenHolidayCol(null)
+    }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [openHolidayCol])
 
   const monthSpans: { key: string; start: number; span: number }[] = []
   if (scale === 'week') {
@@ -64,6 +98,25 @@ export function TimelineBoard({
   return (
     <div className="board-wrap">
       <div className="board">
+        <div className="board-overlays" style={{ width: trackWidth }} aria-hidden>
+          {holidaySpans.map(({ holiday, span }) => (
+            <div
+              key={`wash-${holiday.id}`}
+              className={`holiday-wash holiday-${holiday.country.toLowerCase()}`}
+              style={{
+                left: span.start * cw,
+                width: (span.end - span.start + 1) * cw,
+              }}
+            />
+          ))}
+          {quarterCols.map((col) => (
+            <div
+              key={`q-${col}`}
+              className="quarter-line"
+              style={{ left: col * cw }}
+            />
+          ))}
+        </div>
         <div className="board-header">
           <div />
           <div>
@@ -74,7 +127,7 @@ export function TimelineBoard({
               {monthSpans.map((m) => (
                 <div
                   key={m.key}
-                  className="month-cell"
+                  className={`month-cell${isFiscalQuarterStart(m.key) ? ' quarter-start' : ''}`}
                   style={{ gridColumn: `span ${m.span}` }}
                 >
                   {formatMonthLabel(m.key)}
@@ -86,14 +139,17 @@ export function TimelineBoard({
                 className="week-row"
                 style={{ gridTemplateColumns: `repeat(${cols.length}, ${cw}px)` }}
               >
-                {weeks.map((w) => (
-                  <div key={w} className="week-cell">
+                {weeks.map((w, i) => (
+                  <div
+                    key={w}
+                    className={`week-cell${quarterCols.includes(i) ? ' quarter-start' : ''}`}
+                  >
                     {parseISODate(w).getDate()}
                   </div>
                 ))}
               </div>
             )}
-            <div style={{ position: 'relative', height: 24, marginBottom: 4, width: cols.length * cw }}>
+            <div className="cycle-row-wrap" style={{ width: trackWidth }}>
               {cyclesInWindow.map((c) => {
                 const span = cycleColSpan(c, scale, weeks, months)
                 if (!span) return null
@@ -107,10 +163,8 @@ export function TimelineBoard({
                     key={c.id}
                     className={`cycle-band ${cls}`}
                     style={{
-                      position: 'absolute',
                       left: span.start * cw,
                       width: (span.end - span.start + 1) * cw - 2,
-                      top: 0,
                     }}
                     onClick={() => c.isCompleted && onSelectCycle(c)}
                     title={
@@ -120,6 +174,47 @@ export function TimelineBoard({
                     }
                   >
                     C{c.number}
+                  </div>
+                )
+              })}
+            </div>
+            <div className="holiday-row-wrap" ref={holidayRowRef} style={{ width: trackWidth }}>
+              {holidayGroups.map(({ col, holidays: group }) => {
+                const countries = new Set(group.map((h) => h.country))
+                const countryClass =
+                  countries.size > 1
+                    ? 'holiday-both'
+                    : `holiday-${[...countries][0].toLowerCase()}`
+                const open = openHolidayCol === col
+                return (
+                  <div
+                    key={`h-${col}`}
+                    className={`holiday-band ${countryClass}`}
+                    style={{
+                      left: col * cw,
+                      width: cw - 2,
+                    }}
+                  >
+                    <span className="holiday-band-label">Holidays</span>
+                    <button
+                      type="button"
+                      className="holiday-q"
+                      aria-label="Show holiday names"
+                      aria-expanded={open}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setOpenHolidayCol(open ? null : col)
+                      }}
+                    >
+                      ?
+                    </button>
+                    {open && (
+                      <div className="holiday-tooltip" role="tooltip">
+                        {group.map((h) => (
+                          <p key={h.id}>{holidayTooltip(h)}</p>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )
               })}
@@ -142,6 +237,7 @@ export function TimelineBoard({
               cycles={cycles}
               actualWork={actualWork}
               selectedMemberIds={selectedMemberIds}
+              memberFilterActive={memberFilterActive}
               onDropMember={onDropMember}
               onMoveAssignment={onMoveAssignment}
               onEditAssignment={onEditAssignment}

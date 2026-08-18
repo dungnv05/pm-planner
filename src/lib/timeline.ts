@@ -1,14 +1,15 @@
 import type { ActualWork, Assignment, Cycle } from '../types'
-import { parseISODate, toISODate, startOfWeek, weekIndex, monthKey } from './dates'
+import { addDays, parseISODate, toISODate, startOfWeek, weekIndex, monthKey } from './dates'
+import { isFiscalQuarterStart } from './fiscalYear'
 
 export type TimelineScale = 'week' | 'month'
 
-export const WEEK_COL_W = 36
+export const WEEK_COL_W = 52
 export const MONTH_COL_W = 108
-export const LANE_H = 46
-export const PLAN_BAR_H = 22
-export const ACTUAL_BAR_H = 14
-export const LANE_PAD_Y = 4
+export const LANE_H = 38
+export const PLAN_BAR_H = 18
+export const ACTUAL_BAR_H = 12
+export const LANE_PAD_Y = 3
 
 export function colWidth(scale: TimelineScale): number {
   return scale === 'month' ? MONTH_COL_W : WEEK_COL_W
@@ -71,6 +72,66 @@ export function cycleColSpan(
   }
   if (si < 0 || ei < 0) return null
   return { start: si, end: Math.max(si, ei) }
+}
+
+/** Inclusive date range → column span, clipped to the visible window. */
+export function rangeColSpan(
+  startIso: string,
+  endIso: string,
+  scale: TimelineScale,
+  weeks: string[],
+  months: string[],
+): { start: number; end: number } | null {
+  const rangeStart = parseISODate(startIso)
+  const rangeEnd = parseISODate(endIso)
+  if (rangeEnd.getTime() < rangeStart.getTime()) return null
+
+  if (scale === 'week') {
+    let start = -1
+    let end = -1
+    for (let i = 0; i < weeks.length; i++) {
+      const mon = parseISODate(weeks[i])
+      const sun = addDays(mon, 6)
+      if (mon.getTime() <= rangeEnd.getTime() && sun.getTime() >= rangeStart.getTime()) {
+        if (start < 0) start = i
+        end = i
+      }
+    }
+    if (start < 0) return null
+    return { start, end }
+  }
+
+  let start = -1
+  let end = -1
+  for (let i = 0; i < months.length; i++) {
+    const [y, m] = months[i].split('-').map(Number)
+    const mStart = new Date(y, m - 1, 1)
+    const mEnd = new Date(y, m, 0)
+    if (mStart.getTime() <= rangeEnd.getTime() && mEnd.getTime() >= rangeStart.getTime()) {
+      if (start < 0) start = i
+      end = i
+    }
+  }
+  if (start < 0) return null
+  return { start, end }
+}
+
+/** First column index of each FY quarter that appears in the window. */
+export function fiscalQuarterColIndexes(
+  scale: TimelineScale,
+  weeks: string[],
+  months: string[],
+): number[] {
+  const cols = scale === 'week' ? weeks : months
+  const out: number[] = []
+  let lastMonth: string | null = null
+  for (let i = 0; i < cols.length; i++) {
+    const mk = scale === 'week' ? monthKey(parseISODate(weeks[i])) : months[i]
+    if (!isFiscalQuarterStart(mk) || mk === lastMonth) continue
+    lastMonth = mk
+    out.push(i)
+  }
+  return out
 }
 
 /** Stable lane order: members with plan first (by name), then actual-only. */

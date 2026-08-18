@@ -23,6 +23,11 @@ export function startOfWeek(d: Date): Date {
   return copy
 }
 
+/** Monday of the ISO week containing today (local). */
+export function currentWeekMonday(d: Date = new Date()): string {
+  return toISODate(startOfWeek(d))
+}
+
 export function addDays(d: Date, days: number): Date {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate() + days)
 }

@@ -5,6 +5,15 @@ import { isFiscalQuarterStart } from './fiscalYear'
 export type TimelineScale = 'week' | 'month'
 
 export const WEEK_COL_W = 52
+export const ROADMAP_WEEK_COL_W = 160
+export const ROADMAP_WEEK_COL_MIN = 48
+export const ROADMAP_WEEK_COL_MAX = 280
+export const ROADMAP_WEEK_COL_STEP = 24
+export const ROADMAP_WEEK_COL_WHEEL_STEP = 1
+
+export function clampRoadmapWeekColW(width: number): number {
+  return Math.min(ROADMAP_WEEK_COL_MAX, Math.max(ROADMAP_WEEK_COL_MIN, Math.round(width)))
+}
 export const MONTH_COL_W = 108
 export const LANE_H = 38
 export const PLAN_BAR_H = 18

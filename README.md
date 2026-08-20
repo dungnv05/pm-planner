@@ -9,6 +9,7 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 - **Workload split** per assignment: 25% / 33% / 50% / 100% (or custom)
 - **Capacity colors** by month: yellow (under), green (full), red shades (over)
 - **Plan vs Actual** on completed Linear cycles (actual sits under plan in the same member lane)
+- **Notion cadence** checklist (`/cadence`): daily / weekly / monthly / release / process ticks for EVN Notion docs
 - Data from Linear via the **`linear-enprvn-sync`** Cursor skill; assignments stored locally
 
 ## Run
@@ -46,6 +47,27 @@ Each run writes a **new timestamped snapshot** and does **not** overwrite older 
 The web app loads the **newest timestamped file** in `data/snapshots/` for completed-cycle actuals. If that folder is empty (fresh clone), it falls back to `data/linear-snapshot.json`. Refresh the app after sync.
 
 Never overwrites `data/assignments.json`.
+
+## Notion update cadence
+
+In the app: **Notion cadence** (`/cadence`). Source list: `data/cadence.json`. Schedule (ICT) is on the page: daily/weekly weekdays + time; monthly days + time + T-minus. Checks persist in localStorage.
+
+- **Reminders:** browser notifications while any planner tab stays open (enable on the cadence page).
+- **Reset:** daily and weekly completed ticks clear at **23:59 ICT** (weekly on the last selected weekday). Monthly ticks stay until **T-3** of the next due day, then reset last month and remind this month. Process never auto-resets. Release tasks are generated from Linear milestones named Release / Go-Live / Ship.
+- If the tab is closed at 23:59, the next visit uses the new period key (same outcome).
+
+## Cursor cron jobs (ICT)
+
+Cloud automations on this repo (`cursor/roadmap`). They cannot clear this browser’s cadence checkboxes.
+
+| Job | When (ICT) | UTC cron | What |
+| --- | --- | --- | --- |
+| **EVN daily Notion cadence** | **23:00 every day** | `0 16 * * *` | Skill **evn-notion-update-cadence** — daily RAID / Current Projects pass on live Notion. |
+| **Weekly Linear sync** | **02:00 Friday** | `0 19 * * 4` | Skill **linear-enprvn-sync**, mode **recent**. Archive on Notion Resource planner data sync. Never writes `assignments.json`. |
+
+Friday 02:00 ICT is Thursday 19:00 UTC (`* * 4`). Daily 23:00 ICT is 16:00 UTC.
+
+In Cursor, ask the agent to run those skills for ad-hoc passes. Linear `ENPRVN` remains the source of truth for dates. Weekly capacity is planned on `/planner` in this repo.
 
 ## Assignments persistence
 

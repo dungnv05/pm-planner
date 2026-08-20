@@ -12,6 +12,11 @@ const FEATURES = [
     title: 'Roadmap',
     body: 'Track Linear project milestones across the current fiscal half or a full FY. Read-only — dates update when you sync from Linear.',
   },
+  {
+    to: '/cadence',
+    title: 'Notion cadence',
+    body: 'Daily / weekly / monthly / release checklist for EVN Notion, with ICT reminders. Tick items here; keep the tab open. Cursor skill evn-notion-update-cadence applies the same list in Notion.',
+  },
 ]
 
 export function HomePage() {

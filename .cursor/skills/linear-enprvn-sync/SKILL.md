@@ -202,6 +202,6 @@ members: N · projects: N · cycles: N · completed: N · actualWork: N
 ## Notes
 
 - Prefer team name `"[RIU] Enterprise VN"` for filters; team id for `list_cycles`.
-- Weekly habit: **recent**. Run **projects** after creating a new Linear project. Run **members** after a teammate joins. Run **full** after onboarding, data loss, or when older-cycle actual bars look wrong/missing.
+- **Cron job Weekly Linear sync** — **02:00 Friday ICT** (UTC `0 19 * * 4`) — mode **recent** only. Run **projects** after creating a new Linear project. Run **members** after a teammate joins. Run **full** after onboarding, data loss, or when older-cycle actual bars look wrong/missing.
 - The web app loads the newest timestamped file in `data/snapshots/` (fallback: `data/linear-snapshot.json`). Refresh after sync.
 - `data/snapshots/` is gitignored; Notion is the shared archive.

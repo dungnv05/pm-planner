@@ -23,6 +23,7 @@ export function AppShell({ title, actions, footer, children }: Props) {
             </NavLink>
             <NavLink to="/planner">Resource planner</NavLink>
             <NavLink to="/roadmap">Roadmap</NavLink>
+            <NavLink to="/cadence">Notion cadence</NavLink>
           </nav>
           <div className="meta">
             {snapshot.team?.name ?? 'ENPRVN'} · synced{' '}

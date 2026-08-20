@@ -123,7 +123,7 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
   padding: 24px 20px 40px;
-  max-width: 880px;
+  max-width: 960px;
 }
 
 .home-card {
@@ -1136,4 +1136,227 @@ select {
   padding: 40px 20px;
   color: var(--ink-muted);
   text-align: center;
+}
+
+.cadence-page {
+  padding: 20px 20px 48px;
+  max-width: 920px;
+}
+
+.cadence-lead {
+  margin: 0 0 16px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cadence-lead a {
+  color: var(--accent);
+}
+
+.cadence-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cadence-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+}
+
+.cadence-stat strong {
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cadence-stat span {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.cadence-stat.is-due {
+  border-color: var(--cap-over-1);
+}
+
+.cadence-due-banner {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--cap-over-1);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--cap-over-1) 12%, var(--surface));
+  font-size: 0.9rem;
+}
+
+.cadence-settings {
+  margin: 0 0 18px;
+  padding: 10px 12px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.cadence-settings summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.cadence-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.cadence-settings h3 {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+}
+
+.cadence-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.cadence-time input {
+  max-width: 140px;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: inherit;
+}
+
+.cadence-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cadence-chips-days {
+  max-height: 140px;
+  overflow: auto;
+}
+
+.cadence-chip {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: inherit;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.cadence-chip.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cadence-notify-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.cadence-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cadence-toolbar .scale-toggle {
+  flex-wrap: wrap;
+}
+
+.cadence-when {
+  margin: 0 0 14px;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.cadence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cadence-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.cadence-item.is-checked {
+  background: color-mix(in srgb, var(--accent-soft) 55%, var(--surface));
+}
+
+.cadence-item label {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.cadence-item input {
+  margin-top: 4px;
+  accent-color: var(--accent);
+}
+
+.cadence-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.cadence-item-kicker {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.cadence-item-kicker a {
+  color: var(--accent);
+}
+
+.cadence-item-body strong {
+  font-size: 0.95rem;
+}
+
+.cadence-item-what {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.cadence-item-fields {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-family: 'IBM Plex Mono', monospace;
 }

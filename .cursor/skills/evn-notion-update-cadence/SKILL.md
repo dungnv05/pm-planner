@@ -46,7 +46,7 @@ After Daily MTG 9:30 ICT (or the time set on `/cadence`). New blockers → Linea
 
 Thursday pack. RAG on Current Projects before PdM 1:1. Walk RAID Open items.
 
-**Capacity lives in this repo:** Resource planner (`/planner`), not a Notion board. After assignment, run `linear-enprvn-sync` only if snapshot actuals are stale.
+**Capacity lives in this repo:** Resource planner (`/planner`), not a Notion board. If snapshot actuals are stale, wait for Friday Loop (02:00 ICT) + Cursor cron **Weekly Linear Loop import** (03:00 ICT), or Import JSON on `/planner`. Do not rebuild actualWork from Linear issues in this job.
 
 Refinement notes go to the meeting DB (not Slack-only). QA Hub Plan/Env/Gap only if coverage changed. Retro every 2 weeks Thursday.
 

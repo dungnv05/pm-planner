@@ -1,7 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import assignmentsSeed from '../../data/assignments.json'
 import type { Assignment, AssignmentsFile, Member, Project } from '../types'
-import { loadLatestSnapshot } from '../lib/loadSnapshot'
+import {
+  looksLikeLinearSnapshotPayload,
+  linearSnapshotImportError,
+  loadMergeBaseSnapshot,
+  loadLatestSnapshot,
+  mergeImportedSnapshot,
+  saveSnapshotOverride,
+} from '../lib/loadSnapshot'
 import { MemberPool } from '../components/MemberPool'
 import { TimelineBoard } from '../components/TimelineBoard'
 import { AllocationPicker } from '../components/AllocationPicker'
@@ -24,7 +31,6 @@ import type { TimelineScale } from '../lib/timeline'
 import {
   emptyAssignments,
   exportAssignmentsJson,
-  importAssignmentsJson,
   loadAssignmentsFromStorage,
   saveAssignmentsToStorage,
 } from '../lib/storage'
@@ -159,7 +165,12 @@ export function PlannerPage() {
           >
             Export
           </button>
-          <button type="button" className="btn" onClick={() => importRef.current?.click()}>
+          <button
+            type="button"
+            className="btn"
+            title="Import assignments.json, a full Linear snapshot, or a Loop patch (1-cycle actualWork)"
+            onClick={() => importRef.current?.click()}
+          >
             Import
           </button>
           <input
@@ -171,8 +182,33 @@ export function PlannerPage() {
               const file = e.target.files?.[0]
               if (!file) return
               try {
-                const data = await importAssignmentsJson(file)
-                setAssignmentsFile(data)
+                const parsed: unknown = JSON.parse(await file.text())
+                if (looksLikeLinearSnapshotPayload(parsed)) {
+                  const merged = mergeImportedSnapshot(
+                    parsed,
+                    loadMergeBaseSnapshot(),
+                  )
+                  saveSnapshotOverride(merged)
+                  window.location.reload()
+                  return
+                }
+                if (
+                  parsed &&
+                  typeof parsed === 'object' &&
+                  Array.isArray((parsed as AssignmentsFile).assignments)
+                ) {
+                  const data = parsed as AssignmentsFile
+                  setAssignmentsFile({
+                    updatedAt: data.updatedAt || new Date().toISOString(),
+                    windowStart: data.windowStart || defaultWindowStart(),
+                    assignments: data.assignments,
+                  })
+                  return
+                }
+                throw new Error(
+                  linearSnapshotImportError(parsed) ??
+                    'JSON must be a Linear snapshot (members/projects/cycles/actualWork) or assignments.json',
+                )
               } catch (err) {
                 alert(err instanceof Error ? err.message : 'Import failed')
               }

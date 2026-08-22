@@ -11,13 +11,33 @@ const STATUS_ORDER = [
   'canceled',
 ]
 
+function statusLabel(status: unknown): string {
+  if (typeof status === 'string' && status) return status
+  if (status && typeof status === 'object') {
+    const name = (status as { name?: unknown }).name
+    if (typeof name === 'string' && name) return name
+  }
+  return ''
+}
+
+function statusTypeLabel(statusType: unknown, status: unknown): string {
+  if (typeof statusType === 'string' && statusType) return statusType
+  if (status && typeof status === 'object') {
+    const type = (status as { type?: unknown }).type
+    if (typeof type === 'string' && type) return type
+  }
+  return ''
+}
+
 export function defaultSelectedStatuses(projects: Project[]): string[] {
   const seen = new Set<string>()
   const out: string[] = []
   for (const p of projects) {
-    if (HIDDEN_BY_DEFAULT.has(p.statusType) || seen.has(p.status)) continue
-    seen.add(p.status)
-    out.push(p.status)
+    const status = statusLabel(p.status)
+    const statusType = statusTypeLabel(p.statusType, p.status)
+    if (!status || HIDDEN_BY_DEFAULT.has(statusType) || seen.has(status)) continue
+    seen.add(status)
+    out.push(status)
   }
   return out
 }
@@ -25,7 +45,9 @@ export function defaultSelectedStatuses(projects: Project[]): string[] {
 function uniqueStatuses(projects: Project[]): { status: string; statusType: string }[] {
   const byStatus = new Map<string, string>()
   for (const p of projects) {
-    if (!byStatus.has(p.status)) byStatus.set(p.status, p.statusType)
+    const status = statusLabel(p.status)
+    if (!status || byStatus.has(status)) continue
+    byStatus.set(status, statusTypeLabel(p.statusType, p.status))
   }
   return [...byStatus.entries()]
     .map(([status, statusType]) => ({ status, statusType }))

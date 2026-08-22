@@ -10,7 +10,7 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 - **Capacity colors** by month: yellow (under), green (full), red shades (over)
 - **Plan vs Actual** on completed Linear cycles (actual sits under plan in the same member lane)
 - **Notion cadence** checklist (`/cadence`): daily / weekly / monthly / release / process ticks for EVN Notion docs
-- Data from Linear via the **`linear-enprvn-sync`** Cursor skill; assignments stored locally
+- Data from Linear via the **Linear Agent** weekly snapshot (Import on `/planner`); assignments stored locally
 
 ## Run
 
@@ -31,22 +31,24 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 
 ## Weekly Linear sync
 
-In Cursor, ask the agent to run the **linear-enprvn-sync** skill (`.cursor/skills/linear-enprvn-sync/`).
+Linear Agent on team **ENPRVN** — not Cursor. Paste blocks: `.cursor/skills/linear-enprvn-sync/LINEAR-AGENT.md`.
 
-- **Default (`recent`)**: refresh members/projects/cycles + `actualWork` for the **2 newest completed cycles** only (cheaper).
-- **Projects**: say **“Linear project sync”** / **“Linear projects sync”** to refresh the project list only (new Linear projects). Keeps members, cycles, and actualWork.
-- **Members**: say **“Linear member sync”** / **“Linear members sync”** to refresh the member list only (new teammates). Keeps projects, cycles, and actualWork.
-- **Full**: say “full sync” / “sync all cycles” when you need to rebuild actualWork for every completed cycle.
+- **Loop** (automatic): **Friday 02:00 Asia/Ho_Chi_Minh** — **patch** (`recent-patch`: members, **projects + milestones**, cycles, `actualWork` for the **1 newest completed cycle**). Planner **Import** merges onto the last full snapshot (replaces that cycle’s actuals + project list; keeps older actuals).
+- **Skill** (ad-hoc in Linear chat, `/enprvn-linear-snapshot`):
+  - **recent** (default): full snapshot (members, projects, milestones, cycles + merge older actualWork). Linear Agent often fails this size; prefer Import of a Loop patch or a Cursor-built file in `data/snapshots/`.
+  - **projects**: “Linear project sync” / “update milestones” — project list **and milestones** only
+  - **members**: “Linear member sync” — member list only
+  - **full**: “full sync” / “sync all cycles” — rebuild `actualWork` for every completed cycle
 
-Each run writes a **new timestamped snapshot** and does **not** overwrite older versions:
+Each run attaches JSON to the issue **Resource planner Linear snapshot**:
+- **Skill** (many cycles): `linear-snapshot-YYYYMMDDTHHmmssZ.json`
+- **Loop** (1 cycle patch): `linear-snapshot-<cycle-slug>-<YYYYMMDDTHHmmssZ>.json` (example: `linear-snapshot-cycle-9-20260821T030000Z.json`)
 
-- Local archive: `data/snapshots/linear-snapshot-YYYYMMDDTHHmmssZ.json` (gitignored)
-- Latest pointer (committed fallback): `data/linear-snapshot.json`
-- Shared archive: [Resource planner data sync](https://app.notion.com/p/Resource-planner-data-sync-3bf41a31f12d804e98cbdfa4cf1fc3cb) — newest file is prepended on the page
+Seed that issue once with `data/linear-snapshot.json` so older-cycle actuals are not dropped.
 
-The web app loads the **newest timestamped file** in `data/snapshots/` for completed-cycle actuals. If that folder is empty (fresh clone), it falls back to `data/linear-snapshot.json`. Refresh the app after sync.
+The web app loads an **imported snapshot** from localStorage if present, else the newest file in `data/snapshots/`, else committed `data/linear-snapshot.json`. On `/planner`, **Import** accepts a full Linear snapshot, a Loop **patch** (`recent-patch`, 1-cycle `actualWork`), or `assignments.json`. Patches merge onto the last full snapshot (localStorage if it still has ≥3 actualWork cycles, otherwise disk).
 
-Never overwrites `data/assignments.json`.
+Never overwrites `data/assignments.json`. Do not run a Cursor Automation named Weekly Linear sync (duplicate of the Loop).
 
 ## Notion update cadence
 
@@ -58,22 +60,20 @@ In the app: **Notion cadence** (`/cadence`). Source list: `data/cadence.json`. S
 
 ## Cursor cron jobs (ICT)
 
-Cloud automations on this repo (`cursor/roadmap`). They cannot clear this browser’s cadence checkboxes.
+Cloud automation on this repo (`cursor/roadmap`). It cannot clear this browser’s cadence checkboxes.
 
 | Job | When (ICT) | UTC cron | What |
 | --- | --- | --- | --- |
 | **EVN daily Notion cadence** | **23:00 every day** | `0 16 * * *` | Skill **evn-notion-update-cadence** — daily RAID / Current Projects pass on live Notion. |
-| **Weekly Linear sync** | **02:00 Friday** | `0 19 * * 4` | Skill **linear-enprvn-sync**, mode **recent**. Archive on Notion Resource planner data sync. Never writes `assignments.json`. |
+| **Weekly Linear Loop import** | **Friday 03:00** | `0 20 * * 4` | Download newest Loop patch from Linear issue **Resource planner Linear snapshot**; merge into `data/linear-snapshot.json`; commit. |
 
-Friday 02:00 ICT is Thursday 19:00 UTC (`* * 4`). Daily 23:00 ICT is 16:00 UTC.
-
-In Cursor, ask the agent to run those skills for ad-hoc passes. Linear `ENPRVN` remains the source of truth for dates. Weekly capacity is planned on `/planner` in this repo.
+Daily 23:00 ICT is 16:00 UTC. Friday 03:00 ICT is Thursday 20:00 UTC (one hour after the Linear Loop at Friday 02:00 ICT).
 
 ## Assignments persistence
 
 - Edits are saved to **localStorage** automatically
 - **Export** downloads `assignments-YYYYMMDDTHHmmssZ.json` (commit `data/assignments.json` to share plans)
-- **Import** loads an exported assignments file
+- **Import** loads an exported assignments file **or** a Linear snapshot JSON (`linear-snapshot-*.json`)
 
 Seed file: `data/assignments.json` (`windowStart` defaults to `2026-03-02` for a 6-month window covering recent cycles).
 

@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-08-17T09:18:29.000Z",
-  "syncMode": "recent",
+  "syncedAt": "2026-08-22T07:41:34.000Z",
+  "syncMode": "projects",
   "team": {
     "id": "f2d94035-748c-4cdb-a422-4c64a94b52a4",
     "key": "ENPRVN",
@@ -207,15 +207,114 @@
       "id": "06be2511-2744-4eee-8788-065feb8c798b",
       "name": "DM Supplier Flexibility (DM-SF)",
       "url": "https://linear.app/raksul/project/dm-supplier-flexibility-dm-sf-0268303574ad",
-      "status": "Backlog",
-      "statusType": "backlog",
+      "status": "In Progress",
+      "statusType": "started",
       "startDate": "2026-06-03",
-      "targetDate": null,
-      "leadId": "3f2d9fb6-4b17-4695-8c74-372348bd6bce",
+      "targetDate": "2027-01-15",
+      "leadId": "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
       "memberIds": [
-        "3f2d9fb6-4b17-4695-8c74-372348bd6bce"
+        "b844ba37-1ce0-4c66-9485-1c5cf2ac859e",
+        "c528cf52-45d9-4110-b4bd-4bb011bf8c05",
+        "28ead434-d6e8-42e2-a43f-81a57bb39286"
       ],
-      "milestones": [],
+      "milestones": [
+        {
+          "id": "31988c0e-cb90-4a76-b71d-28e5a4251f2e",
+          "name": "PRD defined",
+          "targetDate": "2026-07-31",
+          "progress": "100%"
+        },
+        {
+          "id": "4ad843dd-7347-48ca-8602-067d505a2c68",
+          "name": "TRD defined",
+          "targetDate": "2026-08-21",
+          "progress": "25%"
+        },
+        {
+          "id": "6a78678c-ba3a-46de-9096-5d6c0f9728dc",
+          "name": "Phase 1 - Implementation completed",
+          "targetDate": "2026-10-26",
+          "progress": "0%"
+        },
+        {
+          "id": "ecd9c3b1-c5c7-4029-a4ed-056a415084e8",
+          "name": "Master data partial products",
+          "targetDate": "2026-10-30",
+          "progress": "0%"
+        },
+        {
+          "id": "5d5bc202-085b-4295-9b1b-5f5be7729037",
+          "name": "Phase 1 - Dev QA completed",
+          "targetDate": "2026-11-06",
+          "progress": "0%"
+        },
+        {
+          "id": "5a185b41-93b0-402a-bd76-7bf02bc20d1b",
+          "name": "Phase 1 - Partner QA completed",
+          "targetDate": "2026-11-13",
+          "progress": "0%"
+        },
+        {
+          "id": "b8689c7f-5601-4e64-99d5-5e47f212e44d",
+          "name": "Phase 1 - Silent release",
+          "targetDate": "2026-11-20",
+          "progress": "0%"
+        },
+        {
+          "id": "ddc2067d-c867-45ea-b4e2-bbaef6b98a04",
+          "name": "Phase 2 - Implementation completed",
+          "targetDate": "2026-11-23",
+          "progress": "0%"
+        },
+        {
+          "id": "c98b2cc7-c0c1-41ed-80b8-a0b23fdcedfc",
+          "name": "Phase 2 - Dev QA completed",
+          "targetDate": "2026-11-27",
+          "progress": "0%"
+        },
+        {
+          "id": "5a84b8d2-b143-4488-9eee-0f91a1b47264",
+          "name": "Master data - all products",
+          "targetDate": "2026-11-27",
+          "progress": "0%"
+        },
+        {
+          "id": "eced1bb6-c487-4f5d-8e24-8f9c6073ecde",
+          "name": "Phase 2 - Partner QA completed",
+          "targetDate": "2026-12-04",
+          "progress": "0%"
+        },
+        {
+          "id": "2d8a9fd4-d283-4195-a267-0ca81ce73137",
+          "name": "Phase 2 - PdM/CS QA completed",
+          "targetDate": "2026-12-04",
+          "progress": "0%"
+        },
+        {
+          "id": "d638ba44-a013-4b59-8e72-f7a7876e6fba",
+          "name": "Feedback fixing",
+          "targetDate": "2026-12-11",
+          "progress": "0%"
+        },
+        {
+          "id": "545317f1-a4ba-4b14-b745-dd83a9344159",
+          "name": "Release - Canary 10%",
+          "targetDate": "2026-12-14",
+          "progress": "0%"
+        },
+        {
+          "id": "81731287-7284-455a-94b9-5f3d265640a5",
+          "name": "Release - Canary 50%",
+          "targetDate": "2027-01-04",
+          "progress": "0%"
+        },
+        {
+          "id": "1774f2c6-ba51-4b8a-bafb-629bc41e6fcd",
+          "name": "Release - Canary 100%",
+          "targetDate": "2027-01-11",
+          "progress": "0%"
+        }
+      ],
       "priority": 2
     },
     {
@@ -224,8 +323,8 @@
       "url": "https://linear.app/raksul/project/dm-segment-based-design-dm-sbd-955f62b3e73d",
       "status": "In Progress",
       "statusType": "started",
-      "startDate": "2026-08-17",
-      "targetDate": "2026-08-21",
+      "startDate": "2026-05-18",
+      "targetDate": "2026-08-25",
       "leadId": "0c707ab7-4bb6-4633-8b5a-16a5943a8436",
       "memberIds": [
         "0c707ab7-4bb6-4633-8b5a-16a5943a8436"
@@ -247,13 +346,13 @@
           "id": "67334b93-1a95-463d-aeb0-d18616a8c790",
           "name": "Category Detail Page Refactoring QA",
           "targetDate": "2026-07-09",
-          "progress": "80%"
+          "progress": "100%"
         },
         {
           "id": "633289a7-72cd-42e9-bab4-11a348bd729b",
           "name": "implementation completed",
           "targetDate": "2026-07-31",
-          "progress": "59%"
+          "progress": "56%"
         },
         {
           "id": "732857bb-6468-47df-82c1-a35d416ec7a0",
@@ -268,15 +367,15 @@
           "progress": "25%"
         },
         {
-          "id": "343fc884-ad60-4f01-a627-19eaf36c0adc",
-          "name": "Stakeholders QA completed",
-          "targetDate": "2026-08-21",
+          "id": "40669f84-75a4-4501-9c59-2948c4292150",
+          "name": "Feedback fixing",
+          "targetDate": "2026-08-28",
           "progress": "0%"
         },
         {
           "id": "deb111de-8ebe-4a87-855a-663d43a40210",
           "name": "Release",
-          "targetDate": "2026-08-25",
+          "targetDate": "2026-08-31",
           "progress": "0%"
         }
       ],
@@ -344,7 +443,7 @@
     },
     {
       "id": "dc1095b7-711e-4f40-a1d4-c35ea359e8ad",
-      "name": "BE-Driven Rendering \u2014 Category Detail page",
+      "name": "BE-Driven Rendering — Category Detail page",
       "url": "https://linear.app/raksul/project/be-driven-rendering-category-detail-page-8b2acb9aad5a",
       "status": "Completed",
       "statusType": "completed",
@@ -421,7 +520,7 @@
       "url": "https://linear.app/raksul/project/domain-control-pm-dc-6af846b6b4af",
       "status": "In Progress",
       "statusType": "started",
-      "startDate": "2026-06-08",
+      "startDate": "2026-06-09",
       "targetDate": null,
       "leadId": null,
       "memberIds": [],

@@ -29,7 +29,7 @@ export function AppShell({ title, actions, footer, children }: Props) {
             {snapshot.team?.name ?? 'ENPRVN'} · synced{' '}
             {snapshot.syncedAt
               ? new Date(snapshot.syncedAt).toLocaleString()
-              : 'never — run linear-enprvn-sync skill'}
+              : 'never — Import a Linear snapshot on /planner'}
           </div>
         </div>
         {actions ? <div className="header-actions">{actions}</div> : null}

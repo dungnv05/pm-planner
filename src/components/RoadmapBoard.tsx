@@ -10,7 +10,6 @@ import {
 import { HolidayBands, HolidayWashes } from './HolidayOverlay'
 import {
   LANE_H,
-  ROADMAP_WEEK_COL_STEP,
   ROADMAP_WEEK_COL_WHEEL_STEP,
   clampRoadmapWeekColW,
   fiscalQuarterColIndexes,

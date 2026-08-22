@@ -52,7 +52,7 @@ export interface ActualWork {
 
 export interface LinearSnapshot {
   syncedAt: string
-  syncMode?: 'recent' | 'full' | 'projects' | 'members'
+  syncMode?: 'recent' | 'recent-patch' | 'full' | 'projects' | 'members'
   team: TeamInfo
   members: Member[]
   projects: Project[]

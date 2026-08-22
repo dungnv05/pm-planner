@@ -49,7 +49,9 @@ Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 | Job | When | UTC cron |
 | --- | --- | --- |
 | EVN daily Notion cadence | 23:00 every day | `0 16 * * *` |
-| Weekly Linear sync | 02:00 Friday | `0 19 * * 4` |
+| Weekly Linear Loop import | Friday 03:00 | `0 20 * * 4` |
+
+Linear Loop writes the 1-cycle patch Friday 02:00 ICT. Cursor cron imports it Friday 03:00 ICT. See `.cursor/skills/linear-enprvn-sync/LINEAR-AGENT.md`.
 
 ## Named seats (verify on Operating One-pager if stale)
 

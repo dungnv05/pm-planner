@@ -17,16 +17,15 @@ import {
   ROADMAP_WEEK_COL_MAX,
   ROADMAP_WEEK_COL_MIN,
   ROADMAP_WEEK_COL_STEP,
-  ROADMAP_WEEK_COL_W,
   clampRoadmapWeekColW,
 } from '../lib/timeline'
 
 export function RoadmapPage() {
   const snapshot = loadLatestSnapshot()
   const todayWeek = currentWeekMonday()
-  const [range, setRange] = useState(() => fiscalRangeFromDate(new Date()))
+  const [range, setRange] = useState(() => fiscalRangeFromDate(new Date(), 'FY'))
   const [centerNonce, setCenterNonce] = useState(0)
-  const [weekColW, setWeekColW] = useState(ROADMAP_WEEK_COL_W)
+  const [weekColW, setWeekColW] = useState(ROADMAP_WEEK_COL_MIN)
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>(() =>
     defaultSelectedStatuses(snapshot.projects ?? []),
   )

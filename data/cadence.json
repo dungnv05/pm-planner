@@ -1,0 +1,252 @@
+{
+  "dashboard": "https://app.notion.com/p/1c0b3184c9e84518a5a0c8510cdcc7dd",
+  "linear": "https://linear.app/raksul/team/ENPRVN/projects/view/active-projects-milestone-d553d902aa7e",
+  "note": "Linear ENPRVN is the source of truth for dates. Notion is the operating picture. Do not journal Architecture, RACI, or the playbook on a daily pass.",
+  "passes": [
+    {
+      "id": "daily",
+      "label": "Daily",
+      "when": "After Daily MTG 9:30 ICT, weekdays",
+      "reset": "day"
+    },
+    {
+      "id": "weekly",
+      "label": "Weekly",
+      "when": "Thursday pack + PdM 1:1",
+      "reset": "week"
+    },
+    {
+      "id": "monthly",
+      "label": "Monthly",
+      "when": "Month-end and after hypercare",
+      "reset": "month"
+    },
+    {
+      "id": "release",
+      "label": "Release window",
+      "when": "Copy playbook checklists into Linear — do not edit the playbook body",
+      "reset": "sticky"
+    },
+    {
+      "id": "process",
+      "label": "Process",
+      "when": "Only when the way of working changed",
+      "reset": "sticky"
+    }
+  ],
+  "items": [
+    {
+      "id": "daily-raid",
+      "pass": "daily",
+      "doc": "EVN RAID Log",
+      "href": "https://app.notion.com/p/cb0893f95d1d451a8ce2ab9438420b11",
+      "title": "Log blockers from Daily",
+      "what": "New Issue/Risk if it threatens a date or needs PdM/CS/DTP. CS/DTP/SCM reports become Linear bugs the same day.",
+      "fields": "Type, Status, Mitigation, Due, Owner, Impact"
+    },
+    {
+      "id": "daily-projects",
+      "pass": "daily",
+      "doc": "EVN Current Projects",
+      "href": "https://app.notion.com/p/43a48e6adc124d7d86affed9fd283129",
+      "title": "Touch projects only if phase moved",
+      "what": "Do not rewrite Notes every standup. Update when blocked, entered QA, or the date slipped.",
+      "fields": "Status, RAG, Target Date, Notes (one line)"
+    },
+    {
+      "id": "daily-linear",
+      "pass": "daily",
+      "doc": "Linear ENPRVN",
+      "href": "https://linear.app/raksul/team/ENPRVN/projects/view/active-projects-milestone-d553d902aa7e",
+      "title": "WIP and bugs live in Linear first",
+      "what": "Ticket state, project target, comments. Notion snapshots Linear.",
+      "fields": "Issue status, project target, comments"
+    },
+    {
+      "id": "weekly-projects",
+      "pass": "weekly",
+      "doc": "EVN Current Projects",
+      "href": "https://app.notion.com/p/43a48e6adc124d7d86affed9fd283129",
+      "title": "Refresh RAG before PdM 1:1",
+      "what": "RAG = can we hit the Linear date given open High RAID. Thursday after refinement.",
+      "fields": "RAG, Status, Target Date, Owner, Notes"
+    },
+    {
+      "id": "weekly-raid",
+      "pass": "weekly",
+      "doc": "EVN RAID Log",
+      "href": "https://app.notion.com/p/cb0893f95d1d451a8ce2ab9438420b11",
+      "title": "Walk Open items",
+      "what": "High + due dates. No reply by SLA → escalate in PdM 1:1 (acting PO: k.kuno / s.nonaka).",
+      "fields": "Status, Due, Mitigation, Owner, Impact"
+    },
+    {
+      "id": "weekly-refine",
+      "pass": "weekly",
+      "doc": "Backlog refinement notes",
+      "href": "https://app.notion.com/p/132a3f4606bf46fea7106309818333fb",
+      "title": "Thursday refinement notes",
+      "what": "Scope, AC, splits. DoR on QA Hub must hold before a story enters sprint. Not Slack-only.",
+      "fields": "Meeting notes for that Thursday"
+    },
+    {
+      "id": "weekly-planner",
+      "pass": "weekly",
+      "doc": "Resource planner (this app)",
+      "href": "/planner",
+      "title": "Capacity vs Linear projects",
+      "what": "PD / PdM / PjM weekly assignment. This app is the working board; Notion resource page is the docs pointer. Then run linear-enprvn-sync if actuals are stale.",
+      "fields": "Assignments on /planner"
+    },
+    {
+      "id": "weekly-qa",
+      "pass": "weekly",
+      "doc": "EVN QA / BDD Hub",
+      "href": "https://app.notion.com/p/3c141a31f12d8147b453cedebac49d0f",
+      "title": "Update Plan / Env / Gap if coverage changed",
+      "what": "Only when BDD/manual coverage or env changed (flake, new epic, DC still no suite).",
+      "fields": "Plan, Env, Gap"
+    },
+    {
+      "id": "weekly-retro",
+      "pass": "weekly",
+      "doc": "Sprint Review + Retro",
+      "href": "https://app.notion.com/p/a43b83a960d941678e92bbf8b2488847",
+      "title": "Retro every 2 weeks (Thursday)",
+      "what": "KPT, close/open sprint, FE/BE estimates. Skip on non-review Thursdays.",
+      "fields": "Retro notes; sprint plan in Linear"
+    },
+    {
+      "id": "monthly-turnover",
+      "pass": "monthly",
+      "doc": "Monthly Movement / Turnover",
+      "href": "https://app.notion.com/p/3ae41a31f12d80dbb845d990549e037b",
+      "title": "YYYY-MM released features page",
+      "what": "After every silent or public prod ship. Month-end: complete the child page.",
+      "fields": "Child page YYYY-MM — Tính năng đã release"
+    },
+    {
+      "id": "monthly-projects",
+      "pass": "monthly",
+      "doc": "EVN Current Projects",
+      "href": "https://app.notion.com/p/43a48e6adc124d7d86affed9fd283129",
+      "title": "Mark shipped epics Done",
+      "what": "Status Done when hypercare ends. Do not leave shipped work as QA.",
+      "fields": "Status Done; Notes = ship date + silent/public"
+    },
+    {
+      "id": "monthly-raid",
+      "pass": "monthly",
+      "doc": "EVN RAID Log",
+      "href": "https://app.notion.com/p/cb0893f95d1d451a8ce2ab9438420b11",
+      "title": "Close stale Watching / mitigated risks",
+      "what": "Keep standing issues honest (PO vacant, shared-service assumptions).",
+      "fields": "Status Resolved vs still Open"
+    },
+    {
+      "id": "monthly-adr",
+      "pass": "monthly",
+      "doc": "EVN Decision Log",
+      "href": "https://app.notion.com/p/189a532339c7484a969cdbf3c26a9fd1",
+      "title": "Review Accepted ADRs",
+      "what": "Mark Deprecated/Superseded if practice changed. Do not rewrite Accepted history.",
+      "fields": "Status only, unless adding a new ADR"
+    },
+    {
+      "id": "process-operating",
+      "pass": "process",
+      "doc": "EVN Team Operating One-pager",
+      "href": "https://app.notion.com/p/3c141a31f12d8133a937cb29ae288529",
+      "title": "Ceremonies, RACI, named seats",
+      "what": "Update when the team changes how it works, not every sprint.",
+      "fields": "Calendar, RACI, Named seats"
+    },
+    {
+      "id": "process-arch",
+      "pass": "process",
+      "doc": "EVN Architecture and Environments",
+      "href": "https://app.notion.com/p/3c141a31f12d81aab110d16056065ac2",
+      "title": "Service map / deploy owner / env",
+      "what": "Update when a repo, pipeline, or owner changes. QA3 = VN verify; QA1 = stakeholder staging.",
+      "fields": "Service map, Repos table, Env table"
+    },
+    {
+      "id": "process-stakeholders",
+      "pass": "process",
+      "doc": "EVN Stakeholder and Communication Matrix",
+      "href": "https://app.notion.com/p/3c141a31f12d811c8dc8d57aa715fcc9",
+      "title": "People, channels, language, SLA",
+      "what": "Update when aliases or acting-PO change.",
+      "fields": "Matrix rows, escalation, language rules"
+    },
+    {
+      "id": "process-qa",
+      "pass": "process",
+      "doc": "EVN QA / BDD Hub",
+      "href": "https://app.notion.com/p/3c141a31f12d8147b453cedebac49d0f",
+      "title": "QA strategy / severity / DoR / DoD",
+      "what": "Ticket-level DoD lives on Linear. Touch strategy only when policy changes.",
+      "fields": "Owners, Test strategy, Bug triage, DoR/DoD"
+    },
+    {
+      "id": "process-dor",
+      "pass": "process",
+      "doc": "Definition of Ready / Done",
+      "href": "https://app.notion.com/p/3c141a31f12d80228103d642e3812106",
+      "title": "Generic DoR/DoD wording",
+      "what": "EVN-specific lists are on the QA Hub. Touch if tracker wording drifts (Jira vs Linear).",
+      "fields": "Checklists"
+    },
+    {
+      "id": "process-adr",
+      "pass": "process",
+      "doc": "EVN Decision Log",
+      "href": "https://app.notion.com/p/189a532339c7484a969cdbf3c26a9fd1",
+      "title": "New ADR the same day",
+      "what": "A decision others must follow. Not a substitute for meeting notes.",
+      "fields": "Name, Status, Area, Decision, Owner, Decided"
+    }
+  ],
+  "releaseTemplates": [
+    {
+      "offset": 10,
+      "title": "T-10 — freeze scope and invite QA",
+      "what": "Release ticket exists. CS/SCM/DTP invited. Target on Linear and Current Projects. RAID reviewed.",
+      "fields": "Current Projects Target Date + RAID",
+      "doc": "EVN Release Playbook",
+      "href": "https://app.notion.com/p/3c141a31f12d818cb9dacab853b24d9d"
+    },
+    {
+      "offset": 5,
+      "title": "T-5 — Dev QA and consumers",
+      "what": "Dev QA done. Backward-compat. Order Hub / IHA / catalog / DM ops checked.",
+      "fields": "Linear ticket + BDD/manual checklist",
+      "doc": "EVN QA / BDD Hub",
+      "href": "https://app.notion.com/p/3c141a31f12d8147b453cedebac49d0f"
+    },
+    {
+      "offset": 3,
+      "title": "T-3 — PdM/CS QA and FAQ draft",
+      "what": "Use the matrix as a ping list. Do not edit the matrix page. FAQ / release note draft ready.",
+      "fields": "Slack / Linear comms",
+      "doc": "Stakeholder matrix",
+      "href": "https://app.notion.com/p/3c141a31f12d811c8dc8d57aa715fcc9"
+    },
+    {
+      "offset": 1,
+      "title": "T-1 Go/No-Go",
+      "what": "No High RAID without mitigation. Rollback owner named. Silent vs public decided (Decision Log if new). Comms drafted.",
+      "fields": "RAID High; Linear Go/No-Go comment",
+      "doc": "EVN RAID Log",
+      "href": "https://app.notion.com/p/cb0893f95d1d451a8ce2ab9438420b11"
+    },
+    {
+      "offset": 0,
+      "title": "T-0 deploy and T+1–5 hypercare",
+      "what": "Slack release thread. Watch CS tickets → RAID issues. Add the feature to the YYYY-MM child page.",
+      "fields": "Monthly child page + RAID issues",
+      "doc": "Monthly Movement / Turnover",
+      "href": "https://app.notion.com/p/3ae41a31f12d80dbb845d990549e037b"
+    }
+  ]
+}

@@ -1,12 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import type { ActualWork, Assignment, Cycle, Member, Project } from '../types'
 import { formatMonthLabel, parseISODate } from '../lib/dates'
 import { isFiscalQuarterStart } from '../lib/fiscalYear'
-import {
-  holidayGroupsInWindow,
-  holidaysInWindow,
-  holidayTooltip,
-} from '../lib/holidays'
+import { HolidayBands, HolidayWashes } from './HolidayOverlay'
 import { ProjectRow } from './ProjectRow'
 import {
   type TimelineScale,
@@ -54,28 +49,6 @@ export function TimelineBoard({
   const cw = colWidth(scale)
   const trackWidth = cols.length * cw
   const quarterCols = fiscalQuarterColIndexes(scale, weeks, months)
-  const holidaySpans = holidaysInWindow(scale, weeks, months)
-  const holidayGroups = holidayGroupsInWindow(scale, weeks, months)
-  const [openHolidayCol, setOpenHolidayCol] = useState<number | null>(null)
-  const holidayRowRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (openHolidayCol === null) return
-    const onDown = (e: MouseEvent) => {
-      if (holidayRowRef.current && !holidayRowRef.current.contains(e.target as Node)) {
-        setOpenHolidayCol(null)
-      }
-    }
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpenHolidayCol(null)
-    }
-    document.addEventListener('mousedown', onDown)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('mousedown', onDown)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [openHolidayCol])
 
   const monthSpans: { key: string; start: number; span: number }[] = []
   if (scale === 'week') {
@@ -99,16 +72,7 @@ export function TimelineBoard({
     <div className="board-wrap">
       <div className="board">
         <div className="board-overlays" style={{ width: trackWidth }} aria-hidden>
-          {holidaySpans.map(({ holiday, span }) => (
-            <div
-              key={`wash-${holiday.id}`}
-              className={`holiday-wash holiday-${holiday.country.toLowerCase()}`}
-              style={{
-                left: span.start * cw,
-                width: (span.end - span.start + 1) * cw,
-              }}
-            />
-          ))}
+          <HolidayWashes weeks={weeks} months={months} scale={scale} colWidthPx={cw} />
           {quarterCols.map((col) => (
             <div
               key={`q-${col}`}
@@ -178,47 +142,7 @@ export function TimelineBoard({
                 )
               })}
             </div>
-            <div className="holiday-row-wrap" ref={holidayRowRef} style={{ width: trackWidth }}>
-              {holidayGroups.map(({ col, holidays: group }) => {
-                const countries = new Set(group.map((h) => h.country))
-                const countryClass =
-                  countries.size > 1
-                    ? 'holiday-both'
-                    : `holiday-${[...countries][0].toLowerCase()}`
-                const open = openHolidayCol === col
-                return (
-                  <div
-                    key={`h-${col}`}
-                    className={`holiday-band ${countryClass}`}
-                    style={{
-                      left: col * cw,
-                      width: cw - 2,
-                    }}
-                  >
-                    <span className="holiday-band-label">Holidays</span>
-                    <button
-                      type="button"
-                      className="holiday-q"
-                      aria-label="Show holiday names"
-                      aria-expanded={open}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        setOpenHolidayCol(open ? null : col)
-                      }}
-                    >
-                      ?
-                    </button>
-                    {open && (
-                      <div className="holiday-tooltip" role="tooltip">
-                        {group.map((h) => (
-                          <p key={h.id}>{holidayTooltip(h)}</p>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
+            <HolidayBands weeks={weeks} months={months} scale={scale} colWidthPx={cw} />
           </div>
         </div>
 

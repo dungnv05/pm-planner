@@ -65,6 +65,57 @@ function normalizeCycle(c, now = Date.now()) {
   return { ...c, isCurrent, isCompleted }
 }
 
+function groupActualWork(rows) {
+  const byCycle = new Map()
+  for (const row of rows) {
+    const list = byCycle.get(row.cycleId)
+    if (list) list.push(row)
+    else byCycle.set(row.cycleId, [row])
+  }
+  return byCycle
+}
+
+function mergeActualWork(incoming, base) {
+  const inBy = groupActualWork(incoming)
+  const baseBy = groupActualWork(base)
+  const thinPatch = inBy.size > 0 && inBy.size <= 2
+  const ids = new Set([...inBy.keys(), ...baseBy.keys()])
+  const out = []
+  for (const id of ids) {
+    const next = inBy.get(id) ?? []
+    const prev = baseBy.get(id) ?? []
+    if (thinPatch && inBy.has(id)) {
+      out.push(...next)
+      continue
+    }
+    out.push(...(next.length >= prev.length && next.length > 0 ? next : prev))
+  }
+  return out
+}
+
+function upsertCycles(incoming, base, now) {
+  if (!Array.isArray(incoming) || incoming.length === 0) {
+    return base.map((c) => normalizeCycle(c, now))
+  }
+  const incomingById = new Map()
+  for (const c of incoming) {
+    if (c && typeof c.id === 'string') {
+      incomingById.set(c.id, normalizeCycle(c, now))
+    }
+  }
+  const seen = new Set()
+  const out = []
+  for (const c of base) {
+    const next = incomingById.get(c.id)
+    out.push(next ?? normalizeCycle(c, now))
+    seen.add(c.id)
+  }
+  for (const [id, c] of incomingById) {
+    if (!seen.has(id)) out.push(c)
+  }
+  return out
+}
+
 function merge(incoming, base) {
   if (!incoming || typeof incoming !== 'object') {
     throw new Error('Patch JSON is not an object')
@@ -78,19 +129,18 @@ function merge(incoming, base) {
       ? incoming.projects
       : base.projects
   const now = Date.now()
-  const cycles = (
-    Array.isArray(incoming.cycles) && incoming.cycles.length > 0
-      ? incoming.cycles
-      : base.cycles
-  ).map((c) => normalizeCycle(c, now))
+  const cycles = upsertCycles(
+    Array.isArray(incoming.cycles) ? incoming.cycles : undefined,
+    base.cycles,
+    now,
+  )
   const ongoing = new Set(cycles.filter((c) => c.isCurrent).map((c) => c.id))
   const fresh = usableActualWork(incoming.actualWork).filter(
     (r) => !ongoing.has(r.cycleId),
   )
-  const refreshIds = new Set(fresh.map((r) => r.cycleId))
-  const kept = refreshIds.size
-    ? base.actualWork.filter((r) => !refreshIds.has(r.cycleId))
-    : base.actualWork
+  const actualWork = mergeActualWork(fresh, base.actualWork).filter(
+    (r) => !ongoing.has(r.cycleId),
+  )
   const merged = {
     syncedAt: incoming.syncedAt || new Date().toISOString(),
     syncMode: 'recent',
@@ -101,7 +151,7 @@ function merge(incoming, base) {
     members,
     projects: (projects ?? []).map(normalizeProject),
     cycles,
-    actualWork: [...kept, ...fresh],
+    actualWork,
   }
   if (!isSnapshot(merged)) {
     throw new Error('Merge did not produce a valid snapshot')

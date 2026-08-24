@@ -16,7 +16,7 @@ Output is **Linear snapshot JSON** for Resource planner **Import**. Never `assig
 
 Ad-hoc `projects` (includes **milestones**) / `members` / `full`: Linear chat + this skill. Do not put those modes on the Loop.
 
-Do not Import a Loop file that fails `JSON.parse`. Loop output is a **patch** (`syncMode: recent-patch`: members, **projects + milestones**, cycles, actualWork for **1** newest completed cycle only). Planner Import merges it onto the last full snapshot (keeps older actuals). Last known-good full file: `linear-snapshot-20260821T060205Z.json` in `data/snapshots/` (106 actualWork rows, 9 cycles).
+Do not Import a Loop file that fails `JSON.parse`. Loop output is a **patch** (`syncMode: recent-patch`: latest members, latest **projects + milestones**, `cycles` length **1**, `actualWork` for that completed cycle only). Planner Import upserts that cycle onto the last full snapshot. Last known-good full file: `linear-snapshot-20260821T060205Z.json` in `data/snapshots/` (106 actualWork rows, 9 cycles).
 
 ---
 
@@ -167,16 +167,18 @@ Linear snapshot (<syncMode>)
 
 Paste into the ENPRVN Loop instructions. Schedule: **Friday 02:00 Asia/Ho_Chi_Minh**.
 
-Linear Agent **cannot** emit the full ~47KB snapshot (truncates or drops old actualWork). The Loop attaches a **patch**: refresh members, **projects + all milestones**, cycles, and `actualWork` for **1** newest completed cycle only. The planner Import merges older actuals.
+Linear Agent **cannot** emit the full ~47KB snapshot (truncates or drops old actualWork). The Loop attaches a **patch**: latest **members**, latest **projects + milestones**, and **exactly 1** previous completed cycle (`cycles.length === 1`) with that cycle’s `actualWork`. Planner Import upserts that cycle and merges older actuals.
 
 ```
-Weekly ENPRVN resource-planner PATCH. Do not emit a full snapshot. Do not copy old actualWork.
+Weekly ENPRVN resource-planner PATCH. Do not emit a full snapshot. Do not copy old actualWork. Do not list all team cycles.
 
 Team: ENPRVN ([RIU] Enterprise VN, id f2d94035-748c-4cdb-a422-4c64a94b52a4).
 Issue title exactly: Resource planner Linear snapshot
 Do not change that issue’s status, assignee, description, or other product issues.
 
-Valid JSON only (starts with { ends with }). Compact (no extra whitespace). No thinking, no tool names, no prose in the file. Omit avatarUrl. projects MUST be a non-empty array — never null, never omit the key.
+Valid JSON only (starts with { ends with }). Compact (no extra whitespace). No thinking, no tool names, no prose in the file. Omit avatarUrl.
+projects MUST be a non-empty array — never null, never omit the key.
+cycles MUST contain exactly 1 object. If cycles.length !== 1, you failed — do not attach.
 
 Members: all users on "[RIU] Enterprise VN", paginate.
 { "id", "name", "displayName", "email", "active" }  active ← isActive.
@@ -186,29 +188,29 @@ Refresh milestones from Linear this run. Do not copy previous milestones. Includ
 status and statusType MUST be strings (never objects):
 { "id", "name", "url", "status": status.name, "statusType": status.type, "startDate", "targetDate", "leadId": lead.id or null, "memberIds": members[].id, "milestones": [{ "id", "name", "targetDate", "progress" }], "priority": priority.value or 0 }
 
-Cycles: all cycles for team id f2d94035-748c-4cdb-a422-4c64a94b52a4 (not only current).
-{ "id", "number", "startsAt", "endsAt", "isCurrent": Linear current OR startsAt <= now < endsAt, "isCompleted": endsAt < now AND NOT isCurrent }
-
-**actualWork cycle (the only one you aggregate):** Linear cycle filter **type=previous** (last completed). Never type=current. Never “this cycle” / “current cycle”.
+The one cycle: Linear cycle filter **type=previous** (last completed). Never type=current. Never “this cycle”. Never list all cycles.
 If that cycle isCurrent or now is inside [startsAt, endsAt), it is not completed — take the next older cycle with endsAt < now and isCurrent false.
+cycles array = that one object only:
+{ "id", "number", "startsAt", "endsAt", "isCurrent": false, "isCompleted": true }
+
 List issues in **that completed cycle only** on "[RIU] Enterprise VN" (paginate, not archived). Fields: id, assigneeId, projectId, cycleId.
 Skip issues missing assigneeId or projectId.
 Aggregate unique (cycleId, memberId=assigneeId, projectId) with issueCount.
-Every actualWork row MUST have cycleId, memberId, projectId, issueCount. No dummy rows. No rows for any other cycle.
+Every actualWork row MUST have cycleId, memberId, projectId, issueCount matching that one cycle. No dummy rows. No stubs for other cycles. No rows for any other cycleId.
 
 Root object:
 {
   "syncedAt": "<ISO now>",
   "syncMode": "recent-patch",
   "team": { "id": "f2d94035-748c-4cdb-a422-4c64a94b52a4", "key": "ENPRVN", "name": "[RIU] Enterprise VN" },
-  "members": [ ... ],
-  "projects": [ ... each with milestones ... ],
-  "cycles": [ ... ],
-  "actualWork": [ ... only that 1 cycle ... ]
+  "members": [ ... all members ... ],
+  "projects": [ ... all projects, each with milestones ... ],
+  "cycles": [ { one completed cycle } ],
+  "actualWork": [ ... rows for that cycleId only ... ]
 }
 
 Filename: linear-snapshot-<cycle-slug>-<YYYYMMDDTHHmmssZ>.json
 cycle-slug = that **completed** cycle’s Linear `name` (lowercase, hyphenated) or `cycle-<number>` — not the current cycle. Example: linear-snapshot-cycle-9-20260821T030000Z.json
 Timestamp from syncedAt UTC.
-Attach that file. Comment: patch, **completed cycle #n** (current cycle #n excluded), members N, projects N, milestones N, cycles N, actualWork N. Planner Import replaces that completed cycle’s actuals and the project list (including milestones); older actuals stay from the previous snapshot.
+Attach that file. Comment: patch, **completed cycle #n only** (current excluded; cycles.length=1), members N, projects N, milestones N, actualWork N. Planner Import upserts that cycle, replaces members + projects (including milestones); older cycles and actuals stay from the previous snapshot.
 ```

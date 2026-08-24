@@ -33,7 +33,7 @@ Local resource planning for Linear team **[RIU] Enterprise VN (ENPRVN)**.
 
 Linear Agent on team **ENPRVN** — not Cursor. Paste blocks: `.cursor/skills/linear-enprvn-sync/LINEAR-AGENT.md`.
 
-- **Loop** (automatic): **Friday 02:00 Asia/Ho_Chi_Minh** — **patch** (`recent-patch`: members, **projects + milestones**, cycles, `actualWork` for the **1 newest completed cycle**). Planner **Import** merges onto the last full snapshot (replaces that cycle’s actuals + project list; keeps older actuals).
+- **Loop** (automatic): **Friday 02:00 Asia/Ho_Chi_Minh** — **patch** (`recent-patch`: latest members, latest **projects + milestones**, **`cycles` length 1**, `actualWork` for that completed cycle). Planner **Import** upserts the cycle and replaces members/projects; keeps older cycles and actuals.
 - **Skill** (ad-hoc in Linear chat, `/enprvn-linear-snapshot`):
   - **recent** (default): full snapshot (members, projects, milestones, cycles + merge older actualWork). Linear Agent often fails this size; prefer Import of a Loop patch or a Cursor-built file in `data/snapshots/`.
   - **projects**: “Linear project sync” / “update milestones” — project list **and milestones** only

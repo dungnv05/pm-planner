@@ -62,6 +62,38 @@ function actualWorkCycleCount(rows: ActualWork[] | undefined): number {
   return new Set((rows ?? []).map((r) => r.cycleId)).size
 }
 
+function groupActualWork(rows: ActualWork[]): Map<string, ActualWork[]> {
+  const byCycle = new Map<string, ActualWork[]>()
+  for (const row of rows) {
+    const list = byCycle.get(row.cycleId)
+    if (list) list.push(row)
+    else byCycle.set(row.cycleId, [row])
+  }
+  return byCycle
+}
+
+/**
+ * Loop often ships 1-row stubs for older cycles. Never replace a cycle with a
+ * thinner set, unless the file is a 1–2 cycle patch (intentional refresh).
+ */
+function mergeActualWork(incoming: ActualWork[], base: ActualWork[]): ActualWork[] {
+  const inBy = groupActualWork(incoming)
+  const baseBy = groupActualWork(base)
+  const thinPatch = inBy.size > 0 && inBy.size <= 2
+  const ids = new Set([...inBy.keys(), ...baseBy.keys()])
+  const out: ActualWork[] = []
+  for (const id of ids) {
+    const next = inBy.get(id) ?? []
+    const prev = baseBy.get(id) ?? []
+    if (thinPatch && inBy.has(id)) {
+      out.push(...next)
+      continue
+    }
+    out.push(...(next.length >= prev.length && next.length > 0 ? next : prev))
+  }
+  return out
+}
+
 function usableActualWork(rows: unknown): ActualWork[] {
   if (!Array.isArray(rows)) return []
   const out: ActualWork[] = []
@@ -85,7 +117,30 @@ function usableActualWork(rows: unknown): ActualWork[] {
   return out
 }
 
-/** Merge a Loop patch (members/projects+milestones/cycles + 1-cycle actualWork) onto a full snapshot. Incoming projects replace previous milestones. */
+function upsertCycles(incoming: Cycle[] | undefined, base: Cycle[], now: number): Cycle[] {
+  if (!Array.isArray(incoming) || incoming.length === 0) {
+    return base.map((c) => normalizeCycle(c, now))
+  }
+  const incomingById = new Map<string, Cycle>()
+  for (const c of incoming) {
+    if (c && typeof c.id === 'string') {
+      incomingById.set(c.id, normalizeCycle(c, now))
+    }
+  }
+  const seen = new Set<string>()
+  const out: Cycle[] = []
+  for (const c of base) {
+    const next = incomingById.get(c.id)
+    out.push(next ?? normalizeCycle(c, now))
+    seen.add(c.id)
+  }
+  for (const [id, c] of incomingById) {
+    if (!seen.has(id)) out.push(c)
+  }
+  return out
+}
+
+/** Merge a Loop patch (members/projects+milestones + 1 cycle + that cycle’s actualWork) onto a full snapshot. */
 export function mergeImportedSnapshot(
   incoming: unknown,
   base: LinearSnapshot,
@@ -99,15 +154,16 @@ export function mergeImportedSnapshot(
   const projects =
     Array.isArray(o.projects) && o.projects.length > 0 ? o.projects : base.projects
   const now = Date.now()
-  const cycles = (
-    Array.isArray(o.cycles) && o.cycles.length > 0 ? o.cycles : base.cycles
-  ).map((c) => normalizeCycle(c, now))
+  const cycles = upsertCycles(
+    Array.isArray(o.cycles) ? o.cycles : undefined,
+    base.cycles,
+    now,
+  )
   const ongoing = new Set(cycles.filter((c) => c.isCurrent).map((c) => c.id))
   const fresh = usableActualWork(o.actualWork).filter((r) => !ongoing.has(r.cycleId))
-  const refreshIds = new Set(fresh.map((r) => r.cycleId))
-  const kept = refreshIds.size
-    ? base.actualWork.filter((r) => !refreshIds.has(r.cycleId))
-    : base.actualWork
+  const actualWork = mergeActualWork(fresh, base.actualWork).filter(
+    (r) => !ongoing.has(r.cycleId),
+  )
   const merged: LinearSnapshot = {
     syncedAt: o.syncedAt || new Date().toISOString(),
     syncMode: o.syncMode || 'recent',
@@ -118,7 +174,7 @@ export function mergeImportedSnapshot(
     members,
     projects,
     cycles,
-    actualWork: [...kept, ...fresh],
+    actualWork,
   }
   if (!isLinearSnapshot(merged)) {
     throw new Error('Merged JSON is not a valid Linear snapshot')
@@ -199,33 +255,44 @@ function loadDiskSnapshot(): LinearSnapshot {
   return normalizeSnapshot(fallbackSnapshot as LinearSnapshot)
 }
 
-/** Base for merging a Loop patch: prefer localStorage only if it still has multi-cycle actuals. */
+/** Base for merging a Loop patch: prefer localStorage only if it still has richer actuals. */
 export function loadMergeBaseSnapshot(): LinearSnapshot {
+  const disk = loadDiskSnapshot()
   try {
     const raw = localStorage.getItem(SNAPSHOT_OVERRIDE_KEY)
     if (raw) {
       const parsed = JSON.parse(raw) as unknown
       if (isLinearSnapshot(parsed) && actualWorkCycleCount(parsed.actualWork) >= 3) {
-        return normalizeSnapshot(parsed)
+        const local = normalizeSnapshot(parsed)
+        if (local.actualWork.length >= disk.actualWork.length) return local
       }
     }
   } catch {
     /* ignore */
   }
-  return loadDiskSnapshot()
+  return disk
 }
 
 /** Imported snapshot in localStorage, else newest `data/snapshots/linear-snapshot-*.json`, else committed `data/linear-snapshot.json`. */
 export function loadLatestSnapshot(): LinearSnapshot {
+  const disk = loadDiskSnapshot()
   try {
     const raw = localStorage.getItem(SNAPSHOT_OVERRIDE_KEY)
     if (raw) {
       const parsed = JSON.parse(raw) as unknown
-      if (isLinearSnapshot(parsed)) return normalizeSnapshot(parsed)
+      if (isLinearSnapshot(parsed)) {
+        const local = normalizeSnapshot(parsed)
+        if (local.actualWork.length >= disk.actualWork.length) return local
+        const healed = mergeImportedSnapshot(local, disk)
+        if (healed.actualWork.length > local.actualWork.length) {
+          saveSnapshotOverride(healed)
+        }
+        return healed
+      }
     }
   } catch {
     /* ignore corrupt override */
   }
 
-  return loadDiskSnapshot()
+  return disk
 }

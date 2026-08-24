@@ -36,11 +36,13 @@ export function milestoneStatusTone(
   today: Date = new Date(),
 ): MilestoneTone {
   const n = Number.parseInt(progress, 10)
-  if (!Number.isNaN(n) && n >= 100) return 'done'
+  const pct = Number.isNaN(n) ? 0 : n
+  if (pct >= 100) return 'done'
   const target = startOfLocalDay(parseISODate(targetDate))
   const now = startOfLocalDay(today)
   const diffDays = Math.round((target.getTime() - now.getTime()) / DAY_MS)
-  if (diffDays < 0) return 'overdue'
+  // Linear empty milestones report 0%. Past due with 0% → treat as completed.
+  if (diffDays < 0) return pct <= 0 ? 'done' : 'overdue'
   if (diffDays <= DUE_SOON_DAYS) return 'due-soon'
   return 'open'
 }

@@ -60,6 +60,8 @@ YYYY-MM child on Monthly Movement (silent and public). Current Projects → Done
 
 In the planner, release checklist rows are generated from Linear milestones named Release / Go-Live / Ship (`data/cadence.json` `releaseTemplates`, T-10…T-0 business days).
 
+**Linear Loop EVN release cadence** — **weekdays 08:00 Asia/Ho_Chi_Minh** — upserts sub-issues T-10…T-0 under tracking issue **EVN release cadence** (label `Project Management`, assignee = Linear project lead) and comments the checklist only when that event is due today. Quiet days: no parent comment. Paste-ready prompt: [LINEAR-RELEASE-LOOP.md](LINEAR-RELEASE-LOOP.md). Not a Cursor job. When you change `releaseTemplates` or VN holidays, update that Loop prompt too.
+
 ## Process
 
 Only when the way of working changed. New Decision Log row the **same day** a decision others must follow.

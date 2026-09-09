@@ -57,6 +57,7 @@ In the app: **Notion cadence** (`/cadence`). Source list: `data/cadence.json`. S
 - **Reminders:** browser notifications while any planner tab stays open (enable on the cadence page).
 - **Reset:** daily and weekly completed ticks clear at **23:59 ICT** (weekly on the last selected weekday). Monthly ticks stay until **T-3** of the next due day, then reset last month and remind this month. Process never auto-resets. Release tasks are generated from Linear milestones named Release / Go-Live / Ship.
 - If the tab is closed at 23:59, the next visit uses the new period key (same outcome).
+- **Linear Loop EVN release cadence** (weekdays **08:00 Asia/Ho_Chi_Minh**): upserts T-10…T-0 sub-issues under **EVN release cadence** (label `Project Management`, assignee = Linear project lead) and comments only when an event is due today. Paste: `.cursor/skills/evn-notion-update-cadence/LINEAR-RELEASE-LOOP.md`. Not a Cursor job.
 
 ## Cursor cron jobs (ICT)
 
@@ -67,7 +68,7 @@ Cloud automation on this repo (`cursor/roadmap`). It cannot clear this browser�
 | **EVN daily Notion cadence** | **23:00 every day** | `0 16 * * *` | Skill **evn-notion-update-cadence** — daily RAID / Current Projects pass on live Notion. |
 | **Weekly Linear Loop import** | **Friday 03:00** | `0 20 * * 4` | Download newest Loop patch from Linear issue **Resource planner Linear snapshot**; merge into `data/linear-snapshot.json`; commit. |
 
-Daily 23:00 ICT is 16:00 UTC. Friday 03:00 ICT is Thursday 20:00 UTC (one hour after the Linear Loop at Friday 02:00 ICT).
+Daily 23:00 ICT is 16:00 UTC. Friday 03:00 ICT is Thursday 20:00 UTC (one hour after the snapshot Linear Loop at Friday 02:00 ICT).
 
 ## Assignments persistence
 

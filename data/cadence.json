@@ -92,11 +92,11 @@
     {
       "id": "weekly-planner",
       "pass": "weekly",
-      "doc": "Resource planner (this app)",
-      "href": "/planner",
-      "title": "Capacity vs Linear projects",
-      "what": "PD / PdM / PjM weekly assignment. This app is the working board; Notion resource page is the docs pointer. Then run linear-enprvn-sync if actuals are stale.",
-      "fields": "Assignments on /planner"
+      "doc": "Resource assignment planner (Notion)",
+      "href": "https://app.notion.com/p/3bf41a31f12d8069b127eca02d917d2c",
+      "title": "Weekly assignment on Notion lite board",
+      "what": "PD / PdM / PjM weekly assignment. Notion is the working board (Member, Project, Start, End, Allocation). Capacity heat and Plan vs Actual stay on /planner — no sync. Then run linear-enprvn-sync if actuals are stale.",
+      "fields": "Assignments on Notion EVN Resource assignments; /planner for capacity vs Linear"
     },
     {
       "id": "weekly-qa",

@@ -13,6 +13,7 @@ Canonical item list: `data/cadence.json`.
 | EVN Current Projects | https://app.notion.com/p/43a48e6adc124d7d86affed9fd283129 | Status (`In Progress` / `QA` / `Release` / `Blocked` / `Done`), RAG (`Green` / `Amber` / `Red`), Target Date, Owner, Notes (one line). Code/PRD/TRD/BDD/WBS/Linear only when links change. |
 | EVN RAID Log | https://app.notion.com/p/cb0893f95d1d451a8ce2ab9438420b11 | Name, Type (`Risk` / `Assumption` / `Issue` / `Dependency`), Project (multi: `DM-SBD` `DM-COM` `PM-DC` `DM-SF` `Cross-team`), Impact, Owner, Due, Mitigation, Status (`Open` / `Watching` / `Mitigating` / `Resolved`). Prefer view **Open items**. |
 | EVN Decision Log | https://app.notion.com/p/189a532339c7484a969cdbf3c26a9fd1 | New ADR: Name, Status (`Proposed` / `Accepted` / `Deprecated` / `Superseded`), Area, Context, Decision, Owner, Decided. Monthly: Status only. |
+| EVN Resource assignments | https://app.notion.com/p/36dc41ca0cb742188872d0a55d5c95fc | Lite plan bars: Member, Project, Code, Start, End, Allocation. Working surface is [Resource assignment planner](https://app.notion.com/p/3bf41a31f12d8069b127eca02d917d2c). Do not journal capacity heat or Plan vs Actual here. |
 
 Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 
@@ -24,7 +25,7 @@ Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 | Monthly Movement / Turnover | https://app.notion.com/p/3ae41a31f12d80dbb845d990549e037b | Child `YYYY-MM — Tính năng đã release`. After every silent or public prod ship. |
 | Backlog refinement notes | https://app.notion.com/p/132a3f4606bf46fea7106309818333fb | Thursday weekly notes. |
 | Retro | https://app.notion.com/p/a43b83a960d941678e92bbf8b2488847 | Every 2 weeks Thursday. |
-| Resource planner | `/planner` in this repo | Weekly capacity vs Linear. Notion [Resource assignment planner](https://app.notion.com/p/3bf41a31f12d8069b127eca02d917d2c) is the docs pointer only. |
+| Resource planner | [Resource assignment planner](https://app.notion.com/p/3bf41a31f12d8069b127eca02d917d2c) | Weekly assignment on Notion (lite editor). `/planner` in this repo is capacity heat + Plan vs Actual only — no sync. |
 
 ## Reference (copy, do not journal)
 
@@ -41,7 +42,7 @@ Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 - Daily MTG: 9:30, weekdays, PjM + Dev
 - Backlog refinement: Thursday weekly
 - Sprint Review + Plan: Thursday every 2 weeks
-- Resource assignment: weekly, PD / PdM / PjM lead — **this app**
+- Resource assignment: weekly, PD / PdM / PjM lead — **Notion lite board**; `/planner` for capacity vs Linear actuals
 - PdM 1:1: weekly, priority / scope / stakeholder risks
 
 ## Cursor cron jobs (ICT)

@@ -257,6 +257,26 @@ select {
   outline-offset: 2px;
 }
 
+.milestone-mark.is-release::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1.5px solid var(--ink);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.milestone-mark.is-release:hover,
+.milestone-wrap.open .milestone-mark.is-release {
+  outline: none;
+}
+
+.milestone-mark.is-release:hover::after,
+.milestone-wrap.open .milestone-mark.is-release::after {
+  border-color: var(--accent);
+  inset: -4px;
+}
+
 .milestone-tooltip {
   position: absolute;
   top: calc(100% + 10px);
@@ -1050,6 +1070,24 @@ select {
   width: 14px;
   height: 14px;
   border-radius: 3px;
+}
+
+.swatch-diamond-release {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  border-radius: 1px;
+  background: var(--cap-empty);
+  transform: rotate(45deg);
+}
+
+.swatch-diamond-release::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1.5px solid var(--ink);
+  border-radius: 1px;
 }
 
 .swatch.actual {

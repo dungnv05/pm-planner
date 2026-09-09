@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { formatMonthLabel, parseISODate } from '../lib/dates'
 import { isFiscalQuarterStart } from '../lib/fiscalYear'
 import {
+  isReleaseMilestoneName,
   milestoneStatusLabel,
   milestoneStatusTone,
   weekdayIndexMondayFirst,
@@ -218,6 +219,7 @@ export function RoadmapBoard({
                       if (col < 0) return null
                       const day = weekdayIndexMondayFirst(m.targetDate)
                       const tone = milestoneStatusTone(m.progress, m.targetDate)
+                      const isRelease = isReleaseMilestoneName(m.name)
                       const center = col * cw + ((day + 0.5) / 7) * cw
                       const open = openId === m.milestoneId
                       return (
@@ -231,7 +233,7 @@ export function RoadmapBoard({
                         >
                           <button
                             type="button"
-                            className={`milestone-mark tone-${tone}`}
+                            className={`milestone-mark tone-${tone}${isRelease ? ' is-release' : ''}`}
                             aria-expanded={open}
                             aria-label={`${m.projectName} · ${m.name}`}
                             onClick={() => setOpenId(open ? null : m.milestoneId)}

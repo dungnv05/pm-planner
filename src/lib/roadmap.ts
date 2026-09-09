@@ -60,6 +60,10 @@ export function milestoneStatusLabel(tone: MilestoneTone): string {
   }
 }
 
+export function isReleaseMilestoneName(name: string): boolean {
+  return /release/i.test(name)
+}
+
 /** Mon=0 … Sun=6 */
 export function weekdayIndexMondayFirst(iso: string): number {
   const day = parseISODate(iso).getDay()

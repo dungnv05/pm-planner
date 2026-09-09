@@ -44,6 +44,15 @@ Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 - Resource assignment: weekly, PD / PdM / PjM lead — **this app**
 - PdM 1:1: weekly, priority / scope / stakeholder risks
 
+## Linear Loops (ICT)
+
+Linear Agent on team ENPRVN — not Cursor.
+
+| Loop | When | Tracking issue | What |
+| --- | --- | --- | --- |
+| EVN release cadence | Weekdays 08:00 | **EVN release cadence** (label `Project Management`) | T-10…T-0 sub-issues from Release / Go-Live / Ship milestones, assigned to the Linear project lead. Comment checklist only when due today. Quiet days: silent. [LINEAR-RELEASE-LOOP.md](LINEAR-RELEASE-LOOP.md) |
+| Resource planner snapshot | Friday 02:00 | **Resource planner Linear snapshot** | 1-cycle patch. See `.cursor/skills/linear-enprvn-sync/LINEAR-AGENT.md`. |
+
 ## Cursor cron jobs (ICT)
 
 | Job | When | UTC cron |
@@ -51,7 +60,7 @@ Current Projects codes: `DM-SBD`, `DM-COM`, `PM-DC`, `DM-SF`.
 | EVN daily Notion cadence | 23:00 every day | `0 16 * * *` |
 | Weekly Linear Loop import | Friday 03:00 | `0 20 * * 4` |
 
-Linear Loop writes the 1-cycle patch Friday 02:00 ICT. Cursor cron imports it Friday 03:00 ICT. See `.cursor/skills/linear-enprvn-sync/LINEAR-AGENT.md`.
+Snapshot Loop writes the 1-cycle patch Friday 02:00 ICT. Cursor cron imports it Friday 03:00 ICT.
 
 ## Named seats (verify on Operating One-pager if stale)
 

@@ -34,6 +34,10 @@ export function CapacityLegend({ variant = 'planner' }: Props) {
           <span className="swatch" style={{ background: 'var(--cap-empty)' }} />
           Open
         </div>
+        <div className="legend-item">
+          <span className="swatch swatch-diamond-release" />
+          Release
+        </div>
       </footer>
     )
   }

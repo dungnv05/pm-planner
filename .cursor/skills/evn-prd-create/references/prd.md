@@ -12,13 +12,13 @@ EVN two-layer PRD (PdM Why/What + PjM phase/AC/RAID). Inspired by [payment-specs
 
 ## Ownership
 
-One Notion URL, two states. PdM (`s.nonaka` only) writes **live 1–4** via the Notion Skill **EVN PRD PdM high-level**. PjM completes **1–9** in Cursor and **Proposes**; `s.nonaka` approves. `k.kuno` is not in this EVN PRD workflow.
+One Notion URL, two states. High-level live **1–4** is written by Notion Skill **EVN PRD PdM high-level** (`s.nonaka`, `v.nguyen`, `ly.hkk`). PjM completes **1–9** in Cursor and **Proposes**; `s.nonaka` approves. `k.kuno` is not in this EVN PRD workflow.
 
-PjM **may edit 1–4** in the suggestion when needed (stance vs AC, audience, assumptions, measurable KPI). Changelog must split product (1–4) vs delivery (5–7). PjM never writes the live body.
+PjM **may write live 1–4** via **EVN PRD PdM high-level**. They **may edit 1–4** again in the suggestion when needed (stance vs AC, audience, assumptions, measurable KPI). Changelog must split product (1–4) vs delivery (5–7). PjM never writes a **full 1–9** live body — that is Propose then `s.nonaka` approve.
 
-| Sections | Owner | Live after PdM | Suggestion after PjM |
+| Sections | Owner | Live after high-level | Suggestion after PjM |
 |---|---|---|---|
-| 1–4 | `s.nonaka` first; PjM may edit via suggestion | Required, high-level, TBD OK | Same or PjM-edited |
+| 1–4 | `s.nonaka` / `v.nguyen` / `ly.hkk` on live; PjM may also edit via suggestion | Required, high-level, TBD OK | Same or PjM-edited |
 | 5–7 | PjM (`v.nguyen` / `ly.hkk`) via suggestion | **Absent** (do not paste TBD 5–9) | Required |
 | 8–9 | Shared on the full draft | Absent on live high-level | Required |
 | TRD | Tech Lead | After approved full PRD | Architecture, `【新規】`, technical NFR, repos |

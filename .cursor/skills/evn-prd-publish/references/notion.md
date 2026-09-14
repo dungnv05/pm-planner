@@ -20,14 +20,15 @@ Fetch the data source before create. Do not use `database_id` when a data source
 
 | Role | People | Notion user id | Email |
 |---|---|---|---|
-| PdM — high-level create + **approve** | `s.nonaka` | `1b4d872b-594c-811e-aa9b-0002a9817c4a` | `s.nonaka@raksul.com` |
-| PjM — **propose** only (may include 1–4 edits) | `v.nguyen`, `ly.hkk` | `060b3675-db4a-4d16-a24d-8c79b24e32ce`, `25cd872b-594c-8132-82f5-0002a2feab17` | `v.nguyen@raksul.com`, `ly.hkk@raksul.com` |
+| PdM — **approve** full PRD | `s.nonaka` | `1b4d872b-594c-811e-aa9b-0002a9817c4a` | `s.nonaka@raksul.com` |
+| High-level 1–4 create (Notion Skill) | `s.nonaka`, `v.nguyen`, `ly.hkk` | `1b4d872b-594c-811e-aa9b-0002a9817c4a`, `060b3675-db4a-4d16-a24d-8c79b24e32ce`, `25cd872b-594c-8132-82f5-0002a2feab17` | `s.nonaka@raksul.com`, `v.nguyen@raksul.com`, `ly.hkk@raksul.com` |
+| PjM — **propose** full 1–9 (may include 1–4 edits) | `v.nguyen`, `ly.hkk` | `060b3675-db4a-4d16-a24d-8c79b24e32ce`, `25cd872b-594c-8132-82f5-0002a2feab17` | `v.nguyen@raksul.com`, `ly.hkk@raksul.com` |
 
 `k.kuno` is **not** in EVN PRD create, suggestion comments, or approve.
 
 Mentions: `<mention-user url="user://UUID"/>`. Identify the actor with Notion `fetch` id `self` (email) when deciding create vs propose vs approve.
 
-**Last proposer:** on every Propose, `self` must be recorded as last proposer (changelog mention + live `Assign` add + parent comment mention). **Approve is `s.nonaka` only.** PjM and Engineer may propose; they may not write the live page.
+**Last proposer:** on every Propose, `self` must be recorded as last proposer (changelog mention + live `Assign` add + parent comment mention). **Approve is `s.nonaka` only.** PjM may write **live 1–4** via **EVN PRD PdM high-level** (or Cursor Create fallback). They must **Propose** to change a full 1–9 live page.
 
 Live after PdM = sections **1–4** only. Suggestion after PjM = full **1–9** (1–4 may change). Headings: [prd.md](../../evn-prd-create/references/prd.md).
 
@@ -41,7 +42,7 @@ Do **not** apply template `PRD for DM * VN dev` (`2fb41a31f12d80f096e6eb334d4acb
 
 ## Create (no existing PRD page)
 
-Prefer Notion Skill **EVN PRD PdM high-level**. Cursor Create is fallback only when `self` is `s.nonaka@raksul.com`.
+Prefer Notion Skill **EVN PRD PdM high-level**. Cursor Create is fallback when `self` is `s.nonaka@raksul.com`, `v.nguyen@raksul.com`, or `ly.hkk@raksul.com`.
 
 `create-pages` parent `data_source_id` = `ac1ad489-edba-41d0-b2f3-6a00db0b1bc6`.
 
@@ -51,14 +52,14 @@ Prefer Notion Skill **EVN PRD PdM high-level**. Cursor Create is fallback only w
 | Tags | Required: `EVN`, `Directmail` for DM. Also set `DM`, `PRD`, and `Japanese & English` when there is a JP summary. IHA: `EVN` + `IHA`, **not** `Directmail`. |
 | Name EN | English title |
 | Ticket | Linear URL (text, not URL type) |
-| Assign | `s.nonaka` when known |
+| Assign | Always `s.nonaka`; add actor if PjM |
 | PRD / TRD | Leave empty on this Docs row unless linking another doc |
 
 Body = **sections 1–4 only**. No Created/Author/URL header. No 5–9 headings.
 
 Then, if Current Projects has a row for `DM-SBD` / `DM-COM` / `PM-DC` / `DM-SF`, set that row’s `PRD` URL to the new page. Do not change Status/RAG.
 
-Linear: high-level PRD created, waiting PjM. Mention only `s.nonaka`. Do not clone Mini Spec.
+Linear: high-level PRD created, waiting complete pass. Mention `s.nonaka` (and the actor if they are PjM). Do not clone Mini Spec.
 
 ## Update (page already exists)
 
@@ -89,7 +90,7 @@ If native Suggest edits were used, `s.nonaka` accepts in the Notion UI; the skil
 
 ## Guardrails
 
-- Never `replace_content` on live PRD except `s.nonaka`-confirmed approve (or PdM Notion Skill writing first 1–4).
+- Never `replace_content` on live PRD except `s.nonaka`-confirmed approve, or high-level skill / Create fallback writing first **1–4** (`s.nonaka` / `v.nguyen` / `ly.hkk`).
 - Never delete Notion pages (archive / rename only).
 - Extra links = `<mention-page>`, never duplicate child `<page url>` unless intentionally creating a subpage.
 - `feature-doc-synthesis` is after PRD, not part of publish.

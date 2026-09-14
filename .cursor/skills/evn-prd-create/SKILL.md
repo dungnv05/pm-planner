@@ -5,20 +5,20 @@ description: >-
   (sections 1–4). PjM fills 5–9 and may edit 1–4 when needed, then proposes a
   suggestion for s.nonaka. Use when the user asks to complete a PRD, điền AC,
   phases, RAID, hoàn thiện PRD, or finish a PdM draft. New high-level PRDs:
-  Notion Skill “EVN PRD PdM high-level” (s.nonaka). Publish: evn-prd-publish
+  Notion Skill “EVN PRD PdM high-level” (`s.nonaka` / `v.nguyen` / `ly.hkk`). Publish: evn-prd-publish
   Propose (not Create). Reviews: evn-prd-review-checklist,
   evn-prd-review-consistency, evn-prd-tech-lead-review.
 ---
 
 # EVN PRD create (PjM complete)
 
-PdM writes sections **1–4** on Notion (skill **EVN PRD PdM high-level**, `s.nonaka` only). This Cursor skill **completes** that page into a full 1–9 draft. Architecture / sequences / technical NFR stay in **TRD**.
+PdM or EVN PjM writes sections **1–4** on Notion (skill **EVN PRD PdM high-level**: `s.nonaka`, `v.nguyen`, `ly.hkk`). This Cursor skill **completes** that page into a full 1–9 draft. Architecture / sequences / technical NFR stay in **TRD**.
 
 **This skill does not create the Docs page.** After the draft is confirmed, use `evn-prd-publish` **Propose**. Do not Create. Do not treat Spec Kit as PRD creation.
 
 Read [references/prd.md](references/prd.md), [references/repositories.md](references/repositories.md), [references/payment-specs-workflow.md](references/payment-specs-workflow.md), and [references/pdm-notion-skill.md](references/pdm-notion-skill.md) before writing.
 
-If the user is `s.nonaka` asking for a **new** high-level PRD (no page yet), point them at the Notion Skill — do not run this pass.
+If the user is asking for a **new** high-level PRD (no page yet), point them at the Notion Skill **EVN PRD PdM high-level** — do not run this complete pass.
 
 ## Workflow
 
@@ -28,7 +28,7 @@ Need a **Notion Docs URL** whose body already has sections 1–4.
 
 No URL → ask. Do not interview as PdM. Do not invent a blank 1–4.
 
-Fetch the live page. If it has only 1–4 (or 5–9 missing), that is expected. If it is empty, stop and send PdM to the Notion Skill.
+Fetch the live page. If it has only 1–4 (or 5–9 missing), that is expected. If it is empty, stop and send them to the Notion Skill.
 
 ### Step 2: Interview (PjM)
 

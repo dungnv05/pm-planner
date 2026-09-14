@@ -1,13 +1,13 @@
 ---
 name: evn-prd-publish
 description: >-
-  Publishes EVN PRDs: PdM s.nonaka may Create a high-level Docs page
-  (sections 1–4) as fallback; PjM Proposes a full 1–9 suggestion (may include
+  Publishes EVN PRDs: s.nonaka / v.nguyen / ly.hkk may Create a high-level
+  Docs page (sections 1–4); PjM Proposes a full 1–9 suggestion (may include
   1–4 edits); only s.nonaka Approves. Use when the user asks to publish PRD,
   đăng PRD, đề xuất PRD, approve PRD suggestion, or gắn Current Projects.PRD.
-  Propose records last proposer. Never overwrite live without s.nonaka.
-  New PdM 1–4: prefer Notion Skill “EVN PRD PdM high-level”. Completing:
-  evn-prd-create then this skill in Propose. Do not clone Mini Spec.
+  Propose records last proposer. Never overwrite a full live PRD except
+  s.nonaka approve. New 1–4: prefer Notion Skill “EVN PRD PdM high-level”.
+  Completing: evn-prd-create then this skill in Propose. Do not clone Mini Spec.
 ---
 
 # EVN PRD publish
@@ -16,7 +16,7 @@ Port of [payment-specs `rules/notion.md`](https://github.com/raksul/payment-spec
 
 Read [references/notion.md](references/notion.md) and [../evn-prd-create/references/prd.md](../evn-prd-create/references/prd.md). **Ask before every Notion or Linear write.**
 
-Default path: PdM Notion Skill writes live **1–4** → Cursor `evn-prd-create` → this skill **Propose** (full 1–9) → **Approve** by `s.nonaka` only.
+Default path: Notion Skill **EVN PRD PdM high-level** writes live **1–4** (`s.nonaka` / `v.nguyen` / `ly.hkk`) → Cursor `evn-prd-create` → this skill **Propose** (full 1–9) → **Approve** by `s.nonaka` only.
 
 Tools: Notion `plugin-notion-workspace-notion` (`fetch`, `create-pages`, `update-page`, `create-comment`, `query-data-sources`, `get-users`). Linear `save_comment` on the ENPRVN project/epic. Do not clone Mini Spec / User Story / Backlog.
 
@@ -24,20 +24,20 @@ Tools: Notion `plugin-notion-workspace-notion` (`fetch`, `create-pages`, `update
 
 | Situation | Mode |
 |---|---|
-| No Docs page; `self` is `s.nonaka@raksul.com` and they ask to create | **Create** (1–4 only). Prefer Notion Skill **EVN PRD PdM high-level**. |
-| No Docs page; actor is not `s.nonaka` | Refuse Create. Point at the Notion Skill / `s.nonaka`. |
-| Live PRD exists; complete or change it | **Propose** |
+| No Docs page; `self` is `s.nonaka` / `v.nguyen` / `ly.hkk` and they ask to create | **Create** (1–4 only). Prefer Notion Skill **EVN PRD PdM high-level**. |
+| No Docs page; actor is not those three | Refuse Create. Point at the Notion Skill. |
+| Live PRD exists; complete 5–9 or change a full PRD | **Propose** |
 | `s.nonaka` wants to apply/reject a suggestion child | **Approve** |
 
 `fetch` id `self` when identity matters.
 
 Approver email: `s.nonaka@raksul.com` only. Do not mention or assign `k.kuno` in this workflow.
 
-## Create (fallback, `s.nonaka` only)
+## Create (fallback, high-level 1–4)
 
-Body = **sections 1–4 only**. Do not paste 5–9.
+Body = **sections 1–4 only**. Do not paste 5–9. Allowed: `s.nonaka@raksul.com`, `v.nguyen@raksul.com`, `ly.hkk@raksul.com`.
 
-1. `fetch` `self`. If email is not `s.nonaka@raksul.com`, refuse.
+1. `fetch` `self`. If email is not one of those three, refuse.
 2. Search Docs for related EVN PRDs. Stop on conflict.
 3. Confirm title `PRD - [code] - [full name]`, tags, Linear URL, Assign.
 4. `create-pages` with parent `data_source_id` `ac1ad489-edba-41d0-b2f3-6a00db0b1bc6`.
@@ -46,8 +46,9 @@ Body = **sections 1–4 only**. Do not paste 5–9.
    - `Ticket` = Linear URL string. `Name EN` = English name.
    - **Do not** set `template_id` to PRD for DM * VN dev.
    - Body = sections 1–4 per [prd.md](../evn-prd-create/references/prd.md). No architecture/sequence Mermaid.
+   - `Assign`: always include `s.nonaka`; add `self` if the actor is PjM.
 5. If Current Projects has Code `DM-SBD` / `DM-COM` / `PM-DC` / `DM-SF`, `update-page` that row’s `PRD` to the new URL only.
-6. Linear comment: high-level PRD created, waiting PjM. Mention only `s.nonaka`. Not a Mini Spec.
+6. Linear comment: high-level PRD created, waiting complete pass. Mention `s.nonaka`. Not a Mini Spec.
 
 ## Propose (update)
 

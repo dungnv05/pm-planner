@@ -41,7 +41,7 @@ EVN v1 does **not** port: harness, legal, estimate, software-asset, data-model, 
 ## EVN differences
 
 - No `evn-specs` GitHub repo. SoT = Notion Docs DB + Linear ENPRVN.
-- Research local clones under `/Users/v.nguyen/dev/`, not payment-specs `repos/` submodules. Cursor `evn-prd-create` is **PjM complete** (explores clones to ground AC / Behavior Examples). PdM 1–4 is the Notion Skill **EVN PRD PdM high-level** (`s.nonaka` only).
+- Research local clones under `/Users/v.nguyen/dev/`, not payment-specs `repos/` submodules. Cursor `evn-prd-create` is **PjM complete** (explores clones to ground AC / Behavior Examples). High-level 1–4 is the Notion Skill **EVN PRD PdM high-level** (`s.nonaka`, `v.nguyen`, `ly.hkk`).
 - Language: English body + Japanese executive summary.
 - **Two-state PRD** on one Notion URL: live after PdM = sections 1–4; suggestion after PjM = full 1–9 (PjM may edit 1–4). Tech Lead writes TRD after the full PRD is approved. Not 1:1 with Payment’s Overview Mermaid / NFR / Technical Considerations.
 - Approve is `s.nonaka` only (`k.kuno` is out of EVN PRD create/approve). Propose records **last proposer** (`Assign` + changelog mention + parent comment). PjM and Engineer propose one suggestion branch only.
